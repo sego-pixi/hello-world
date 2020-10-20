@@ -24,17 +24,12 @@ chan1= AnalogIn(mcp,MCP.P1)
 
 print("Raw ADC Value: ", chan.value)
 print("ADC Voltage: " + str(chan.voltage) + "V")
-#print("new value: ",chan1.value)
-# voltage=chan.value*5
-# voltage/=1024.0
-# x= voltage-0.5
-# temperature=x/0.01
+
 print("Runtime    Temp Reading    Temp") #spaces of 4 between words
 def printit():
         threading.Timer(10, printit).start()
         sec=round(time.perf_counter())
         voltage=chan.value*5
-        print("Herreeee",chan.value)
         voltage/=1024.0
         x= voltage-0.5
         temperature=x/0.01
