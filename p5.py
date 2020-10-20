@@ -32,7 +32,7 @@ temperature=x/0.01
 print("Runtime    Temp Reading    Temp") #spaces of 4 between words
 def printit():
         threading.Timer(10, printit).start()
-        sec=round(time.process_time())
+        sec=round(time.time())
         print("{:2d}s".format(sec),end="")
         print("{:-10d} {:-17.1f} C".format(chan.value,temperature))
         
