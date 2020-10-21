@@ -33,7 +33,7 @@ def printit():
         voltage/=1024.0
         x= voltage-0.5
         temperature=x/0.01
-        print("Here",temperature)
+        #print("Here",temperature)
         print("{:2d}s".format(sec),end="")
         print("{:-10d} {:-17.1f} C".format(chan.value,temperature))
         
