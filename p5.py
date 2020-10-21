@@ -35,7 +35,7 @@ def printit():
         temperature=x/0.01
         #print("Here",temperature)
         print("{:2d}s".format(sec),end="")
-        print("{:-10d} {:-17.1f} C".format(chan.value,temperature))
+        print("{:-10d} {:-17.1f} C".format(chan1.value,temperature))
         
                     
 
