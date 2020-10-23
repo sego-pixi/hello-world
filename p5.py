@@ -27,9 +27,12 @@ print("ADC Voltage: " + str(chan.voltage) + "V")
 
 print("Runtime    Temp Reading    Temp") #spaces of 4 between words
 def printit():
-        threading.Timer(10, printit).start()
+      
+        thread = threading.Timer(10, printit)
+        thread.daemon=True
+        thread.start()
         sec=round(time.perf_counter())
-        voltage=chan.value*5
+        voltage=chan1.value*5
         voltage/=1024.0
         x= voltage-0.5
         temperature=x/0.01
