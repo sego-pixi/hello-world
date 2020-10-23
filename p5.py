@@ -31,12 +31,13 @@ def printit():
         thread = threading.Timer(10, printit).start()
 #         thread.daemon=True
 #         thread.start()
-        sec=round(time.time()-time.time())
+        
         voltage=chan.value*5
         voltage/=1024.0
         x= voltage-0.5
         temperature=x/0.01
         #print("Here",temperature)
+        sec=round(time.clock())
         print("{:2d}s".format(sec),end="")
         print("{:-10d} {:-17.1f} C".format(chan1.value,temperature))
         
