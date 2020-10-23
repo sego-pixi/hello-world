@@ -1,5 +1,5 @@
 import threading
-import time
+from time import perf_count
 import busio
 import digitalio
 import board
@@ -31,7 +31,7 @@ def printit():
         thread = threading.Timer(10, printit).start()
 #         thread.daemon=True
 #         thread.start()
-        sec=round(time.perf_counter())
+        sec=round(perf_counter())
         voltage=chan.value*5
         voltage/=1024.0
         x= voltage-0.5
