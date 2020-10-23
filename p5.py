@@ -1,5 +1,5 @@
 import threading
-import time import perf_counter
+from time import perf_counter
 import busio
 import digitalio
 import board
