@@ -37,7 +37,7 @@ def printit():
         x= voltage-0.5
         temperature=x/0.01
         #print("Here",temperature)
-        sec=round(time.process_time())
+        sec=round(time.perf_counter())
         print("{:2d}s".format(sec),end="")
         print("{:-10d} {:-17.1f} C".format(chan1.value,temperature))
         
