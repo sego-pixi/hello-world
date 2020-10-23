@@ -31,7 +31,7 @@ def printit():
         thread = threading.Timer(10, printit).start()
 #         thread.daemon=True
 #         thread.start()
-        sec=round(time.time())
+        sec=round(time.time()-1603457724)
         voltage=chan.value*5
         voltage/=1024.0
         x= voltage-0.5
