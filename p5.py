@@ -32,7 +32,7 @@ def printit():
 #         thread.daemon=True
 #         thread.start()
         
-        voltage=chan.value*5
+        voltage=chan1.value*5
         voltage/=1024.0
         x= voltage-0.5
         temperature=x/0.01
