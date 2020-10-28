@@ -15,9 +15,7 @@ GPIO.setwarnings(False) # Ignore warning for now
 GPIO.setmode(GPIO.BCM) # Use physical pin numbering
 GPIO.setup(btn, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) 
 
-while True: # Run forever
-    if GPIO.input(10) == GPIO.HIGH:
-        print("Button was pushed!")
+
 # create the spi bus
 spi = busio.SPI(clock=board.SCK, MISO=board.MISO, MOSI=board.MOSI)
 
@@ -56,5 +54,7 @@ def printit():
         print("{:-10d} {:-17.1f} C".format(chan1.value,temperature))
         
                     
-
+while True: # Run forever
+    if GPIO.input(10) == GPIO.HIGH:
+        print("Button was pushed!")
 printit()
