@@ -45,15 +45,8 @@ def printit():
 #         thread.daemon=True
 #         thread.start()
         
-        #voltage=chan1.value*5
-        #voltage/=1024.0
-        #x= voltage-0.5
-        #temperature=x/0.01
-        #x=chan1.value*3.3*100/1023
-        #temperature=x-273.15
         x=chan.voltage-0.5
         temperature=x/0.01
-        #print("Here",temperature)
         sec=round(time.thread_time())
         print("{:2d}s".format(sec),end="")
         print("{:-10d} {:-17.1f} C".format(chan1.value,temperature))
