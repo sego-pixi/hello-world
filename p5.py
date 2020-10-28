@@ -8,7 +8,7 @@ from adafruit_mcp3xxx.analog_in import AnalogIn
 import RPi.GPIO as GPIO
 btn=16
 GPIO.setwarnings(False) # Ignore warning for now
-GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
+GPIO.setmode(16) # Use physical pin numbering
 GPIO.setup(btn, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) 
 
 while True: # Run forever
