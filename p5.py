@@ -5,15 +5,18 @@ import digitalio
 import board
 import adafruit_mcp3xxx.mcp3008 as MCP
 from adafruit_mcp3xxx.analog_in import AnalogIn
-import RPi.GPIO as GPIO
-
-#import RPi.GPIO as GPIO # Import Raspberry Pi GPIO library
+#import RPi.GPIO as GPIO
 
 
-btn=10
-GPIO.setwarnings(False) # Ignore warning for now
-GPIO.setmode(GPIO.BCM) # Use physical pin numbering
-GPIO.setup(btn, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) 
+
+
+# btn=10
+# GPIO.setwarnings(False) # Ignore warning for now
+# GPIO.setmode(GPIO.BCM) # Use physical pin numbering
+# GPIO.setup(btn, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) 
+# while True: # Run forever
+#     if GPIO.input(10) == GPIO.HIGH:
+#         print("Button was pushed!")
 
 
 # create the spi bus
@@ -54,7 +57,5 @@ def printit():
         print("{:-10d} {:-17.1f} C".format(chan1.value,temperature))
         
                     
-while True: # Run forever
-    if GPIO.input(10) == GPIO.HIGH:
-        print("Button was pushed!")
+
 printit()
