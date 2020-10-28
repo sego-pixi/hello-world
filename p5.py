@@ -8,8 +8,8 @@ from adafruit_mcp3xxx.analog_in import AnalogIn
 import RPi.GPIO as GPIO
 btn=16
 GPIO.setwarnings(False) # Ignore warning for now
-GPIO.setmode(GPIO.BCM) # Use physical pin numbering
-GPIO.setup(16, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) 
+GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
+GPIO.setup(btn, GPIO.IN, pull_up_down=GPIO.PUD_UP) 
 
 while True: # Run forever
     if GPIO.input(10) == GPIO.HIGH:
