@@ -39,6 +39,7 @@ print("Raw ADC Value: ", chan.value)
 print("ADC Voltage: " + str(chan.voltage) + "V")
 
 print("Runtime    Temp Reading    Temp") #spaces of 4 between words
+start=time.time()
 def printit():
       
         thread = threading.Timer(10, printit).start()
@@ -47,7 +48,7 @@ def printit():
         
         x=chan.voltage-0.5
         temperature=x/0.01
-        start=time.time()
+        
         time.sleep(10)
         end=time.time()
         duration=end-start
