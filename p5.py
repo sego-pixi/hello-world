@@ -55,7 +55,7 @@ def get_press():
 #                 #count=0
 #                 #s=interval[count]
                 count+=1
-#                 time.sleep(5)
+                time.sleep(5)
 #                 #if count==3:                       
 #                         #count=0
                 print(count)
