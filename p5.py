@@ -68,7 +68,7 @@ def printit():
        count=0
        interval=[1,5,10]
        if btn_pressed:
-              global s=interval[count]
+              s=interval[count]
               count+=1
               if count==3:
                      count=0 
