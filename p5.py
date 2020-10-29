@@ -108,7 +108,7 @@ def start_helper_thread():
     except:
         print("thread error")
     
- def printit():
+def printit():
 
             
        start_helper_thread()     
@@ -126,4 +126,4 @@ def start_helper_thread():
         
                     
 
-# printit()
+printit()
