@@ -82,8 +82,8 @@ def printit():
               sec=round(duration)
         #sec=round(time.perf_counter())
        
-       print("{:2d}s".format(sec),end='')
-       print("{:-13d} {:-15.1f} C".format(chan1.value,temperature))
+              print("{:2d}s".format(sec),end='')
+              print("{:-13d} {:-15.1f} C".format(chan1.value,temperature))
             
             
        thread = threading.Timer(10, printit).start()   
