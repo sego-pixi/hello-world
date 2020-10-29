@@ -30,7 +30,7 @@ gpio.setmode(gpio.BCM)
 gpio.setup(16, gpio.IN)
 
 while True:
-    input_value = gpio.input(17)
+    input_value = gpio.input(16)
     if input_value == False:
         print('The button has been pressed...')
         while input_value == False:
