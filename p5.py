@@ -88,4 +88,4 @@ def printit(s):
         
                     
 
-printit()
+printit(s)
