@@ -53,7 +53,7 @@ def get_press():
 #                     if count==3:
 #                             count=0 
              #print(s)
-get_press()
+
 def get_interval():
     s=interval[count]
     count+=1
@@ -61,6 +61,7 @@ def get_interval():
         count=0
     print(s)
     return s
+get_press()
     
 # def start_helper_thread():
 #     try:
