@@ -5,7 +5,7 @@ import digitalio
 import board
 import adafruit_mcp3xxx.mcp3008 as MCP
 from adafruit_mcp3xxx.analog_in import AnalogIn
-import RPi.GPIO as GPIO
+import RPi.GPIO as gpio
 
 #import RPi.GPIO as GPIO # Import Raspberry Pi GPIO library
 # def button_callback(channel):
@@ -26,7 +26,7 @@ import RPi.GPIO as GPIO
 #     if GPIO.input(10) == GPIO.HIGH:
 #         print("Button was pushed!")
 
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(gpio.BCM)
 gpio.setup(16, gpio.IN)
 
 while True:
