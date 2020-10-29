@@ -27,11 +27,21 @@ import RPi.GPIO as GPIO
 #         print("Button was pushed!")
 
 GPIO.setmode(GPIO.BCM)
-btn=16
-GPIO.setup(btn, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+gpio.setup(16, gpio.IN)
+
 while True:
-  buttonState = GPIO.input(btn)
-  if buttonState == False:
+    input_value = gpio.input(17)
+    if input_value == False:
+        print('The button has been pressed...')
+        while input_value == False:
+            input_value = gpio.input(16)
+
+
+# btn=16
+# GPIO.setup(btn, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+# while True:
+#   buttonState = GPIO.input(btn)
+#   if buttonState == False:
 #     GPIO.output(ledPin, GPIO.HIGH)
     print("Nothing")
   else:
