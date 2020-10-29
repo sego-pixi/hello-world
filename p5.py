@@ -50,14 +50,15 @@ def get_press():
                     print("not pressed")
             if btn_pressed:
                 #global s
-                global count
-                #count=0
-                #s=interval[count]
-                count+=1
-                time.sleep(5)
-                #if count==3:                       
-                        #count=0
-                print(count)
+#                 global count
+#                 #count=0
+#                 #s=interval[count]
+#                 count+=1
+#                 time.sleep(5)
+#                 #if count==3:                       
+#                         #count=0
+#                 print(count)
+                update_count()
                 
                 #count=0
                 #get_interval(interval[0])
@@ -69,7 +70,18 @@ def get_press():
 #                     if count==3:
 #                             count=0 
         
-
+def update_count():
+        
+        while True:
+                if btn_pressed():
+                        global count
+                        count+=1
+                        if count==3:
+                                count=0
+        print(count)
+        return count
+        
+        
 def get_interval(s):
    # global s
     while btn_pressed:
