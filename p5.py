@@ -57,8 +57,8 @@ def get_press():
 #                             count=0 
              #print(s)
 
-def get_interval():
-    global s
+def get_interval(s):
+   # global s
     while btn_pressed:
         
         
