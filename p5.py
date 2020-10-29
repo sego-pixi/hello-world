@@ -53,59 +53,37 @@ def get_press():
 #                     if count==3:
 #                             count=0 
              #print(s)
-def get_interval():
-    s=interval[count]
-    count+=1
-    if count==3:
-        count=0
-    print(s)
-    return s
+get_press()
+# def get_interval():
+#     s=interval[count]
+#     count+=1
+#     if count==3:
+#         count=0
+#     print(s)
+#     return s
     
-def start_helper_thread():
-    try:
-        thread.start_new_thread(get_press,())
-    except:
-        print("thread error")
+# def start_helper_thread():
+#     try:
+#         thread.start_new_thread(get_press,())
+#     except:
+#         print("thread error")
     
-def printit():
-        
-#        if(GPIO.input(15)):
-#             btn_pressed = True
-#        else:            
-#             btn_pressed = False
-#        #count=0
-#        interval=[1,5,10]
-#        if btn_pressed:
-#               s=interval[count]
-#               count+=1
-#               if count==3:
-#                      count=0 
-#               print(s)
-#               thread = threading.Timer(s, printit).start()   
-#               x=chan.voltage-0.5
-#               temperature=x/0.01
-#               time.sleep(10)
-#               end=time.time()
-#               duration=end-start
-#               sec=round(duration)
+# def printit():
+
+            
+#        start_helper_thread()     
+#        thread = threading.Timer(10, printit).start()   
+#        x=chan.voltage-0.5
+#        temperature=x/0.01
+#        time.sleep(10)
+#        end=time.time()
+#        duration=end-start
+#        sec=round(duration)
 #         #sec=round(time.perf_counter())
        
-#               print("{:2d}s".format(sec),end='')
-#               print("{:-13d} {:-15.1f} C".format(chan1.value,temperature))
-            
-       start_helper_thread()     
-       thread = threading.Timer(10, printit).start()   
-       x=chan.voltage-0.5
-       temperature=x/0.01
-       time.sleep(10)
-       end=time.time()
-       duration=end-start
-       sec=round(duration)
-        #sec=round(time.perf_counter())
-       
-       print("{:2d}s".format(sec),end='')
-       print("{:-13d} {:-15.1f} C".format(chan1.value,temperature))
+#        print("{:2d}s".format(sec),end='')
+#        print("{:-13d} {:-15.1f} C".format(chan1.value,temperature))
         
                     
 
-printit()
+# printit()
