@@ -51,14 +51,16 @@ def get_press():
             if btn_pressed:
                 #count=0
                 #get_interval(interval[0])
-                global s
-                global count
-                count=0
-                s=interval[count]
-                count+=1
-                if count==3:
+                while True:
+                        
+                        global s
+                        global count
                         count=0
-                print(s)
+                        s=interval[count]
+                        count+=1
+                        if count==3:
+                                count=0
+                        print(s)
 #                     s=interval[count]
 #                     count+=1
 #                     if count==3:
