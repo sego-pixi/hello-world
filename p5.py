@@ -26,7 +26,7 @@ import RPi.GPIO as GPIO
 #     if GPIO.input(10) == GPIO.HIGH:
 #         print("Button was pushed!")
 
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 btn=16
 GPIO.setup(btn, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 while True:
