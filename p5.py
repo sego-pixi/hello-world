@@ -48,7 +48,7 @@ def get_press():
                     btn_pressed = True
             else:            
                     btn_pressed = False
-                    print("not pressed")
+                    #print("not pressed")
             if btn_pressed:
                 
 #                 global s
@@ -100,7 +100,7 @@ def get_interval():
                 print(count)
                 print(s)
     return s
-get_press()
+#get_press()
     
 def start_helper_thread():
     try:
