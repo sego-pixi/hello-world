@@ -68,7 +68,7 @@ def get_interval():
                 count=0
         print(s)
     #count+=1
-    print(s)
+        print(s)
     return s
 get_press()
     
