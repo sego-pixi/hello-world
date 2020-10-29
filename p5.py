@@ -41,7 +41,7 @@ x=chan.voltage-0.5
 temperature=x/0.01
 print("Runtime    Temp Reading    Temp") #spaces of 4 between words
 #print("0s     ",chan1.value,temperature)
-print("0s    {:-10d} {:-17.1f} C".format(chan1.value,temperature))
+print("0s    {:-10d} {:-15.1f} C".format(chan1.value,temperature))
 start=time.time()
 def printit():
       
@@ -58,7 +58,7 @@ def printit():
         sec=round(duration)
         #sec=round(time.perf_counter())
         print("{:2d}s".format(sec),end="")
-        print("{:-10d} {:-17.1f} C".format(chan1.value,temperature))
+        print("{:-14d} {:-17.1f} C".format(chan1.value,temperature))
         
                     
 
