@@ -8,14 +8,14 @@ from adafruit_mcp3xxx.analog_in import AnalogIn
 import RPi.GPIO as GPIO
 
 #import RPi.GPIO as GPIO # Import Raspberry Pi GPIO library
-def button_callback(channel):
-    print("Button was pushed!")
-GPIO.setwarnings(False) # Ignore warning for now
-GPIO.setmode(GPIO.BCM) # Use physical pin numbering
-GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
-GPIO.add_event_detect(10,GPIO.RISING,callback=button_callback) # Setup event on pin 10 rising edge
-message = input("Press enter to quit\n\n") # Run until someone presses enter
-GPIO.cleanup() # Clean up
+# def button_callback(channel):
+#     print("Button was pushed!")
+# GPIO.setwarnings(False) # Ignore warning for now
+# GPIO.setmode(GPIO.BCM) # Use physical pin numbering
+# GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
+# GPIO.add_event_detect(10,GPIO.RISING,callback=button_callback) # Setup event on pin 10 rising edge
+# message = input("Press enter to quit\n\n") # Run until someone presses enter
+# GPIO.cleanup() # Clean up
 
 
 # btn=10
@@ -26,6 +26,17 @@ GPIO.cleanup() # Clean up
 #     if GPIO.input(10) == GPIO.HIGH:
 #         print("Button was pushed!")
 
+GPIO.setmode(GPIO.BOARD)
+btn=16
+GPIO.setup(btn, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+while True:
+  buttonState = GPIO.input(buttonPin)
+  if buttonState == False:
+#     GPIO.output(ledPin, GPIO.HIGH)
+    print("Nothing")
+  else:
+    print("button pressed")
+#     GPIO.output(ledPin, GPIO.LOW)
 
 # create the spi bus
 spi = busio.SPI(clock=board.SCK, MISO=board.MISO, MOSI=board.MOSI)
