@@ -35,7 +35,7 @@ print("0s    {:-10d} {:-15.1f} C".format(chan1.value,temperature))
 start=time.time()
 btn_pressed=False
 #global count
-#count=0
+count=0
 interval=[1,5,10]
 global s
 #s=interval[count]
@@ -49,18 +49,20 @@ def get_press():
                     btn_pressed = False
                     print("not pressed")
             if btn_pressed:
+                #global s
+                global count
+                #count=0
+                #s=interval[count]
+                count+=1
+                #if count==3:                       
+                        #count=0
+                 print(count)
+                
                 #count=0
                 #get_interval(interval[0])
-                while True:
+                
                         
-                        global s
-                        global count
-                        count=0
-                        s=interval[count]
-                        count+=1
-                        if count==3:
-                                count=0
-                        print(s)
+                      
 #                     s=interval[count]
 #                     count+=1
 #                     if count==3:
