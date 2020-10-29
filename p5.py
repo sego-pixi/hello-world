@@ -54,7 +54,7 @@ def printit():
               count+=1
               if count==3:
                      count=0 
-        thread = threading.Timer(s, printit).start()
+         thread = threading.Timer(s, printit).start()
 #         thread.daemon=True
 #         thread.start()
         
