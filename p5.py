@@ -58,9 +58,10 @@ def get_press():
              #print(s)
 
 def get_interval():
+    global s
     while btn_pressed:
         
-        global s
+        
         global count
         s=interval[count]
         count+=1
