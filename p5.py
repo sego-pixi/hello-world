@@ -31,7 +31,6 @@ print("ADC Voltage: " + str(chan.voltage) + "V")
 x=chan.voltage-0.5
 temperature=x/0.01
 print("Runtime    Temp Reading    Temp") #spaces of 4 between words
-print("0s     ",chan1.value,temperature)
 print("0s    {:-10d} {:-15.1f} C".format(chan1.value,temperature))
 start=time.time()
 btn_pressed=False
@@ -46,8 +45,7 @@ def get_press():
                     btn_pressed = True
             else:            
                     btn_pressed = False
-       #count=0
-            interval=[1,5,10]
+                        print("not pressed")
             if btn_pressed:
                 get_interval()
 #                     s=interval[count]
@@ -60,6 +58,7 @@ def get_interval():
     count+=1
     if count==3:
         count=0
+    print(s)
     return s
     
 def start_helper_thread():
