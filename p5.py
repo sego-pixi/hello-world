@@ -48,6 +48,7 @@ def get_press():
                     btn_pressed = False
                     print("not pressed")
             if btn_pressed:
+                count=0
                 get_interval()
 #                     s=interval[count]
 #                     count+=1
