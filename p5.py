@@ -72,12 +72,13 @@ def get_press():
         
 def update_count():
         
-        while True:
-                if btn_pressed:
-                        global count
-                        count+=1
-                        if count==3:
-                                count=0
+        while btn_pressed:
+                global count
+                count+=1
+                if count==3:                        
+                        count=0
+                
+                        
         print(count)
         return count
         
