@@ -9,9 +9,9 @@ import RPi.GPIO as GPIO
 
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(16,GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(15,GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 while True:
-    if(GPIO.input(16)):
+    if(GPIO.input(15)):
         print("BUtton pressed")
         #GPIO.output(16,1)
     else:
