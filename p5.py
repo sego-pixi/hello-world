@@ -12,11 +12,11 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(15,GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 while True:
     if(GPIO.input(15)):
-        print("BUtton pressed")
+        #print("BUtton pressed")
         btn_pressed = True
         #GPIO.output(16,1)
     else:
-        print("False")
+        #print("False")
 #         #GPIO.output(16,0)
         btn_pressed = False
 #         time.sleep(1)
