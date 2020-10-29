@@ -37,7 +37,8 @@ btn_pressed=False
 #global count
 count=0
 interval=[1,5,10]
-global s
+#global 
+s=10 #initially
 #s=interval[count]
 # if btn_pressed:
 #     s=interval[count]
@@ -93,7 +94,7 @@ def get_interval():
                 global count
                 s=interval[count]
                 count+=1
-                ime.sleep(5)
+                time.sleep(5)
                 if count==3:                       
                         count=0
                 print(count)
