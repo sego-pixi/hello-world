@@ -58,7 +58,7 @@ count=0
 interval=[1,5,10]
 if btn_pressed:
     s=interval[count]
-def printit():
+def printit(s):
         
        if(GPIO.input(15)):
             btn_pressed = True
