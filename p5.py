@@ -38,7 +38,7 @@ global count
 count=0
 interval=[1,5,10]
 global s
-s=interval[count]
+#s=interval[count]
 # if btn_pressed:
 #     s=interval[count]
 def get_press():
@@ -60,7 +60,7 @@ def get_press():
 def get_interval(count,s):
     while btn_pressed:
         
-        s=interval[count]
+        global s=interval[count]
         count+=1
         if count==3:
                 count=0
