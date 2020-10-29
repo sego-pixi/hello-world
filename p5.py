@@ -71,9 +71,9 @@ def get_press():
 #                             count=0 
         
 def update_count():
-        
+        global count
         while btn_pressed:
-                global count
+                
                 count+=1
 #                 if count==3:                        
 #                         count=0
