@@ -61,8 +61,8 @@ def get_interval():
     while btn_pressed:
         
         global s
-        s=interval[count]
         global count
+        s=interval[count]
         count+=1
         if count==3:
                 count=0
