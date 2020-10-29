@@ -43,9 +43,9 @@ while True:
 #   buttonState = GPIO.input(btn)
 #   if buttonState == False:
 #     GPIO.output(ledPin, GPIO.HIGH)
-    print("Nothing")
-  else:
-    print("button pressed")
+#     print("Nothing")
+#   else:
+#     print("button pressed")
 #     GPIO.output(ledPin, GPIO.LOW)
 
 # create the spi bus
