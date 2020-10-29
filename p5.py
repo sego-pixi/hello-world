@@ -57,7 +57,7 @@ def get_press():
              #print(s)
 
 def get_interval(count):
-    while True:
+    while btn_pressed:
         
         s=interval[count]
         count+=1
