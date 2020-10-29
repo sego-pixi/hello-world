@@ -54,7 +54,7 @@ def get_press():
 #                     count+=1
 #                     if count==3:
 #                             count=0 
-             print(s)
+             #print(s)
 def get_interval():
     s=interval[count]
     count+=1
