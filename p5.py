@@ -30,7 +30,7 @@ GPIO.setmode(GPIO.BCM)
 btn=16
 GPIO.setup(btn, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 while True:
-  buttonState = GPIO.input(buttonPin)
+  buttonState = GPIO.input(btn)
   if buttonState == False:
 #     GPIO.output(ledPin, GPIO.HIGH)
     print("Nothing")
