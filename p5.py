@@ -32,13 +32,15 @@ count=0
 ButtonState= True
 
 while True:
-    input_value = gpio.input(16)
-    if input_value == False:
-        print('The button has been pressed...')
-        print(count)
-        time.sleep(2)
-    else:
-        print("here")
+    if(gpio.input(16)):
+        print("BUtton pressed")
+#     input_value = gpio.input(16)
+#     if input_value == False:
+#         print('The button has been pressed...')
+#         print(count)
+#         time.sleep(2)
+#     else:
+#         print("here")
 #         while input_value == False:
 #             input_value = gpio.input(16)
             
