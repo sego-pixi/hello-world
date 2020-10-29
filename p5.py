@@ -10,16 +10,23 @@ import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(15,GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-while True:
-    if(GPIO.input(15)):
-        #print("BUtton pressed")
-        btn_pressed = True
-        #GPIO.output(16,1)
-    else:
-        #print("False")
-#         #GPIO.output(16,0)
-        btn_pressed = False
-#         time.sleep(1)
+# if(GPIO.input(15)):
+#     btn_pressed = True
+# else:
+#     btn_pressed = False
+    
+#         #print("BUtton pressed")
+    
+# while True:
+#     if(GPIO.input(15)):
+#         #print("BUtton pressed")
+#         btn_pressed = True
+#         #GPIO.output(16,1)
+#     else:
+#         #print("False")
+# #         #GPIO.output(16,0)
+#         btn_pressed = False
+# #         time.sleep(1)
 
 
 # create the spi bus
@@ -47,6 +54,11 @@ print("Runtime    Temp Reading    Temp") #spaces of 4 between words
 print("0s    {:-10d} {:-15.1f} C".format(chan1.value,temperature))
 start=time.time()
 def printit():
+        
+       if(GPIO.input(15)):
+            btn_pressed = True
+       else:            
+            btn_pressed = False
        count=0
        interval=[1,5,10]
        if btn_pressed:
