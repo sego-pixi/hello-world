@@ -66,11 +66,11 @@ def printit():
             btn_pressed = False
        count=0
        interval=[1,5,10]
-       if btn_pressed:
-              s=interval[count]
-              count+=1
-              if count==3:
-                     count=0 
+#        if btn_pressed:
+#               s=interval[count]
+#               count+=1
+#               if count==3:
+#                      count=0 
        thread = threading.Timer(10, printit).start()   
        x=chan.voltage-0.5
        temperature=x/0.01
