@@ -56,7 +56,7 @@ start=time.time()
 btn_pressed=False
 count=0
 interval=[1,5,10]
-#global s
+global s
 if btn_pressed:
     s=interval[count]
 def printit():
@@ -80,7 +80,7 @@ def printit():
        duration=end-start
        sec=round(duration)
         #sec=round(time.perf_counter())
-       print(global s)
+       print(s)
        print("{:2d}s".format(sec),end='')
        print("{:-13d} {:-15.1f} C".format(chan1.value,temperature))
         
