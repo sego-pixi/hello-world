@@ -16,10 +16,10 @@ ButtonState= True
 while True:
     if(GPIO.input(16)):
         print("BUtton pressed")
-        GPIO.output(16,1)
+        #GPIO.output(16,1)
     else:
         print("False")
-        GPIO.output(16,0)
+        #GPIO.output(16,0)
         sleep(0.1)
 
 
