@@ -20,7 +20,7 @@ while True:
     else:
         print("False")
         #GPIO.output(16,0)
-        time.sleep(0.1)
+        time.sleep(3)
 
 
 # create the spi bus
