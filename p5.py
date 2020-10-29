@@ -63,7 +63,7 @@ def get_press():
                 #update_count()
                 
                 #count=0
-                print(get_interval())
+                get_interval()
                 
                         
                       
@@ -102,27 +102,27 @@ def get_interval():
     return s
 get_press()
     
-# def start_helper_thread():
-#     try:
-#         thread.start_new_thread(get_press,())
-#     except:
-#         print("thread error")
+def start_helper_thread():
+    try:
+        thread.start_new_thread(get_press,())
+    except:
+        print("thread error")
     
-# def printit():
+ def printit():
 
             
-#        start_helper_thread()     
-#        thread = threading.Timer(10, printit).start()   
-#        x=chan.voltage-0.5
-#        temperature=x/0.01
-#        time.sleep(10)
-#        end=time.time()
-#        duration=end-start
-#        sec=round(duration)
-#         #sec=round(time.perf_counter())
+       start_helper_thread()     
+       thread = threading.Timer(s, printit).start()   
+       x=chan.voltage-0.5
+       temperature=x/0.01
+       time.sleep(s)
+       end=time.time()
+       duration=end-start
+       sec=round(duration)
+        #sec=round(time.perf_counter())
        
-#        print("{:2d}s".format(sec),end='')
-#        print("{:-13d} {:-15.1f} C".format(chan1.value,temperature))
+       print("{:2d}s".format(sec),end='')
+       print("{:-13d} {:-15.1f} C".format(chan1.value,temperature))
         
                     
 
