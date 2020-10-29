@@ -8,15 +8,17 @@ from adafruit_mcp3xxx.analog_in import AnalogIn
 import RPi.GPIO as GPIO
 
 
-# GPIO.setmode(GPIO.BCM)
-# GPIO.setup(15,GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-# while True:
-#     if(GPIO.input(15)):
-#         print("BUtton pressed")
-#         #GPIO.output(16,1)
-#     else:
-#         print("False")
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(15,GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+while True:
+    if(GPIO.input(15)):
+        print("BUtton pressed")
+         btn_pressed = True
+        #GPIO.output(16,1)
+    else:
+        print("False")
 #         #GPIO.output(16,0)
+         btn_pressed = False
 #         time.sleep(1)
 
 
@@ -45,15 +47,21 @@ print("Runtime    Temp Reading    Temp") #spaces of 4 between words
 print("0s    {:-10d} {:-15.1f} C".format(chan1.value,temperature))
 start=time.time()
 def printit():
-       
-        thread = threading.Timer(10, printit).start()
+       count=0
+       interval=[1,5,10]
+       if btn_pressed:
+              s=interval[count]
+              count+=1
+              if count==3:
+                     count=0 
+        thread = threading.Timer(s, printit).start()
 #         thread.daemon=True
 #         thread.start()
         
         x=chan.voltage-0.5
         temperature=x/0.01
         
-        time.sleep(10)
+        time.sleep(s)
         end=time.time()
         duration=end-start
         sec=round(duration)
