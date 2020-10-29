@@ -58,7 +58,7 @@ def printit():
         sec=round(duration)
         #sec=round(time.perf_counter())
         print("{:2d}s".format(sec),end="")
-        print("{:-14d} {:-17.1f} C".format(chan1.value,temperature))
+        print("{:-13d} {:-15.1f} C".format(chan1.value,temperature))
         
                     
 
