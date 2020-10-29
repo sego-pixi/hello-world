@@ -57,11 +57,14 @@ def get_press():
              #print(s)
 
 def get_interval(count):
-    s=interval[count]
-    count+=1
-    if count==3:
-        count=0
-    count+=1
+    while True:
+        
+        s=interval[count]
+        count+=1
+        if count==3:
+                count=0
+        print(s)
+    #count+=1
     print(s)
     return s
 get_press()
