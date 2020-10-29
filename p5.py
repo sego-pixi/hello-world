@@ -65,7 +65,7 @@ def printit():
             btn_pressed = True
        else:            
             btn_pressed = False
-       count=0
+       #count=0
        interval=[1,5,10]
        if btn_pressed:
               s=interval[count]
