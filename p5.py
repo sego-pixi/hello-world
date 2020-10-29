@@ -37,8 +37,10 @@ chan1= AnalogIn(mcp,MCP.P1)
 
 print("Raw ADC Value: ", chan.value)
 print("ADC Voltage: " + str(chan.voltage) + "V")
-
+x=chan.voltage-0.5
+temperature=x/0.01
 print("Runtime    Temp Reading    Temp") #spaces of 4 between words
+print("0s   ",chan1.value,temperature)
 start=time.time()
 def printit():
       
