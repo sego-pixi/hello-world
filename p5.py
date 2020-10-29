@@ -53,6 +53,7 @@ print("Runtime    Temp Reading    Temp") #spaces of 4 between words
 #print("0s     ",chan1.value,temperature)
 print("0s    {:-10d} {:-15.1f} C".format(chan1.value,temperature))
 start=time.time()
+btn_pressed=False
 count=0
 interval=[1,5,10]
 if btn_pressed:
