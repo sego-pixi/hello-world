@@ -34,10 +34,10 @@ print("Runtime    Temp Reading    Temp") #spaces of 4 between words
 print("0s    {:-10d} {:-15.1f} C".format(chan1.value,temperature))
 start=time.time()
 btn_pressed=False
-global count
-count=0
+#global count
+#count=0
 interval=[1,5,10]
-global s
+#global s
 #s=interval[count]
 # if btn_pressed:
 #     s=interval[count]
@@ -60,7 +60,9 @@ def get_press():
 def get_interval(count,s):
     while btn_pressed:
         
-        global s=interval[count]
+        global s
+        s=interval[count]
+        global count
         count+=1
         if count==3:
                 count=0
