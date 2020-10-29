@@ -63,9 +63,9 @@ def get_interval():
     
 def start_helper_thread():
     try:
-        start_new_thread(get_press,())
+        thread.start_new_thread(get_press,())
     except:
-        print("Error adc thread error")
+        print("thread error")
     
 def printit():
         
