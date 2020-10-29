@@ -28,13 +28,18 @@ import RPi.GPIO as gpio
 
 gpio.setmode(gpio.BCM)
 gpio.setup(16, gpio.IN)
+count=0
+ButtonState= True
 
 while True:
     input_value = gpio.input(16)
     if input_value == False:
         print('The button has been pressed...')
-        while input_value == False:
-            input_value = gpio.input(16)
+        print(count)
+        time.sleep(0.5)
+#         while input_value == False:
+#             input_value = gpio.input(16)
+            
 
 
 # btn=16
