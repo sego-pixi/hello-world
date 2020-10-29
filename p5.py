@@ -58,16 +58,16 @@ def printit():
 #         thread.daemon=True
 #         thread.start()
         
-        x=chan.voltage-0.5
-        temperature=x/0.01
+       x=chan.voltage-0.5
+       temperature=x/0.01
         
-        time.sleep(s)
-        end=time.time()
-        duration=end-start
-        sec=round(duration)
+       time.sleep(s)
+       end=time.time()
+       duration=end-start
+       sec=round(duration)
         #sec=round(time.perf_counter())
-        print("{:2d}s".format(sec),end="")
-        print("{:-13d} {:-15.1f} C".format(chan1.value,temperature))
+       print("{:2d}s".format(sec),end="")
+       print("{:-13d} {:-15.1f} C".format(chan1.value,temperature))
         
                     
 
