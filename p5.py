@@ -72,7 +72,20 @@ def printit():
               count+=1
               if count==3:
                      count=0 
-       print(s)
+              print(s)
+              thread = threading.Timer(s, printit).start()   
+              x=chan.voltage-0.5
+              temperature=x/0.01
+              time.sleep(10)
+              end=time.time()
+              duration=end-start
+              sec=round(duration)
+        #sec=round(time.perf_counter())
+       
+       print("{:2d}s".format(sec),end='')
+       print("{:-13d} {:-15.1f} C".format(chan1.value,temperature))
+            
+            
        thread = threading.Timer(10, printit).start()   
        x=chan.voltage-0.5
        temperature=x/0.01
