@@ -49,14 +49,18 @@ def get_press():
                     global s
                     if s==10:
                         s=1
+                        time.sleep(5)
                     elif s==1:
                         s=5
+                        time.sleep(5)
                     else:
                         s=10
+                        time.sleep(5)
                     print(s)
                         
             else:
                 btn_pressed=False
+                print(s)
                     
                 #print("not pressed")
 #             if btn_pressed:
