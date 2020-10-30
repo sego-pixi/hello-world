@@ -77,7 +77,7 @@ start_helper_thread()
 def printit():
 
             
-       #start_helper_thread()     
+       start_helper_thread()     
        #print(get_press())
        #thread = threading.Timer(s, printit).start()  
        x=chan.voltage-0.5
@@ -94,4 +94,4 @@ def printit():
         
                     
 
-#printit()
+printit()
