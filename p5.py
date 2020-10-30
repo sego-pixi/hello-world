@@ -49,18 +49,18 @@ def get_press():
                     global s
                     if s==10:
                         s=1
-                        time.sleep(5)
+                        time.sleep(3)
                     elif s==1:
                         s=5
-                        time.sleep(5)
+                        time.sleep(3)
                     else:
                         s=10
-                        time.sleep(5)
+                        time.sleep(3)
                     print(s)
                         
             else:
                 btn_pressed=False
-                print(s)
+                #print(s)
                     
                 #print("not pressed")
 #             if btn_pressed:
@@ -94,7 +94,7 @@ def get_interval():
                         s=10
                 print(s)
     return s
-get_press()
+#get_press()
     
 def start_helper_thread():
     try:
@@ -106,7 +106,7 @@ def printit():
 
             
        start_helper_thread()     
-       thread = threading.Timer(s, printit).start()   
+       #thread = threading.Timer(s, printit).start()   
        x=chan.voltage-0.5
        temperature=x/0.01
        time.sleep(s)
@@ -120,4 +120,4 @@ def printit():
         
                     
 
-#printit()
+printit()
