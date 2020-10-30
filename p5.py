@@ -46,6 +46,7 @@ def get_press():
         while True:           
             if(GPIO.input(15)):
                     btn_pressed = True
+                    global s
                     if s==10:
                         s=1
                     elif s==1:
