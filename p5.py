@@ -57,7 +57,7 @@ def get_press():
                         s=10
                         time.sleep(3)
                     print(s)
-                return s
+        return s
                         
             else:
                 btn_pressed=False                  
