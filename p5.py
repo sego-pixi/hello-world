@@ -42,7 +42,7 @@ s=10 #initially
 #s=interval[count]
 # if btn_pressed:
 #     s=interval[count]
-def get_press():
+def get_press(s):
         while True:           
             if(GPIO.input(15)):
                     #btn_pressed = True
@@ -69,7 +69,7 @@ def get_press():
     
 def start_helper_thread():
     try:
-        start_new_thread(get_press,())
+        start_new_thread(get_press,(s))
     except:
         print("thread error")
 start_helper_thread()
