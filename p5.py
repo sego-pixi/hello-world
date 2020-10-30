@@ -6,6 +6,7 @@ import board
 import adafruit_mcp3xxx.mcp3008 as MCP
 from adafruit_mcp3xxx.analog_in import AnalogIn
 import RPi.GPIO as GPIO
+from thread import start_new_thread
 
 
 GPIO.setmode(GPIO.BCM)
@@ -72,7 +73,7 @@ def start_helper_thread():
         start_new_thread(get_press,())
     except:
         print("thread error")
-#start_helper_thread()
+start_helper_thread()
 def printit():
 
             
@@ -93,4 +94,4 @@ def printit():
         
                     
 
-printit()
+#printit()
