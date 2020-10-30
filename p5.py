@@ -38,7 +38,7 @@ btn_pressed=False
 count=0
 interval=[1,5,10]
 #global 
-s=10 #initially
+s #initially
 #s=interval[count]
 # if btn_pressed:
 #     s=interval[count]
