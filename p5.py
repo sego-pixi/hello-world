@@ -50,48 +50,16 @@ def get_press():
                     btn_pressed = False
                     #print("not pressed")
             if btn_pressed:
-                global s
-                
-                if s==10:
-                        s=1
-                if s==1:
-                        s=5
-                if s==5:
-                        s=10
-                print(s)
-                
+                get_interval()
 #                 global s
-#                 global count
-#                 s=interval[count]
-#                 count+=1
-#                 time.sleep(5)
-#                 if count==3:                       
-#                         count=0
-#                 print(count)
+                
+#                 if s==10:
+#                         s=1
+#                 if s==1:
+#                         s=5
+#                 if s==5:
+#                         s=10
 #                 print(s)
-                #update_count()
-                
-                #count=0
-                #get_interval()
-                
-                        
-                      
-#                     s=interval[count]
-#                     count+=1
-#                     if count==3:
-#                             count=0 
-        
-def update_count():
-        global count
-        while btn_pressed:
-                
-                count+=1
-#                 if count==3:                        
-#                         count=0
-                
-                        
-        print(count)
-        return count
         
         
 def get_interval():
@@ -100,13 +68,13 @@ def get_interval():
     while btn_pressed:
 
                 global s
-                global count
-                s=interval[count]
-                count+=1
-                time.sleep(5)
-                if count==3:                       
-                        count=0
-                print(count)
+                
+                if s==10:
+                        s=1
+                if s==1:
+                        s=5
+                if s==5:
+                        s=10
                 print(s)
     return s
 get_press()
