@@ -42,11 +42,11 @@ s=10 #initially
 #s=interval[count]
 # if btn_pressed:
 #     s=interval[count]
-def get_press(s):
+def get_press():
         while True:           
             if(GPIO.input(15)):
                     #btn_pressed = True
-                    #global s
+                    global s
                     if s==10:
                         s=1
                         time.sleep(3)
@@ -63,9 +63,9 @@ def get_press(s):
             else:
                 btn_pressed=False                  
                 #print("not pressed")
-            return s
+            #return s
                
-print(get_press(s))
+#print(get_press(s))
     
 def start_helper_thread():
     try:
@@ -76,8 +76,8 @@ def start_helper_thread():
 def printit():
 
             
-       start_helper_thread()     
-       #thread = threading.Timer(s, printit).start()   
+       #start_helper_thread()     
+       thread = threading.Timer(s, printit).start()   
        x=chan.voltage-0.5
        temperature=x/0.01
        time.sleep(s)
@@ -91,4 +91,4 @@ def printit():
         
                     
 
-#printit()
+printit()
