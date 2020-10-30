@@ -69,7 +69,7 @@ def get_press():
     
 def start_helper_thread():
     try:
-        start_new_thread(get_press,(s))
+        start_new_thread(get_press,())
     except:
         print("thread error")
 #start_helper_thread()
@@ -77,11 +77,12 @@ def printit():
 
             
        #start_helper_thread()     
-       print(get_press())
-       thread = threading.Timer(s, printit).start()  
+       #print(get_press())
+       #thread = threading.Timer(s, printit).start()  
        x=chan.voltage-0.5
        temperature=x/0.01
-       time.sleep(s)
+       #time.sleep(s)
+       time.sleep(get_press())
        end=time.time()
        duration=end-start
        sec=round(duration)
