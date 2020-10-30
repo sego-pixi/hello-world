@@ -65,14 +65,14 @@ def get_press():
                 #print("not pressed")
             #return s
                
-get_press()
+#get_press()
     
 def start_helper_thread():
     try:
         start_new_thread(get_press,())
     except:
         print("thread error")
-#start_helper_thread()
+start_helper_thread()
 def printit():
 
             
