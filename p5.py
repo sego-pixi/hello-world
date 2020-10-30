@@ -81,8 +81,8 @@ def printit():
        #thread = threading.Timer(s, printit).start()  
        x=chan.voltage-0.5
        temperature=x/0.01
-       #time.sleep(s)
-       time.sleep(get_press())
+       time.sleep(s)
+       #time.sleep(get_press())
        end=time.time()
        duration=end-start
        sec=round(duration)
