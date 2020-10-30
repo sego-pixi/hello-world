@@ -80,7 +80,6 @@ def printit():
        start_helper_thread()     
        #print(get_press())
        thread = threading.Timer(s, printit).start()
-       thread.join()
        x=chan.voltage-0.5
        temperature=x/0.01
        time.sleep(s)
