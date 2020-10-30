@@ -38,7 +38,7 @@ btn_pressed=False
 count=0
 interval=[1,5,10]
 #global 
-s #initially
+s=10 #initially
 #s=interval[count]
 # if btn_pressed:
 #     s=interval[count]
@@ -54,11 +54,11 @@ def get_press():
 #                 global s
                 
 #                 if s==10:
-#                         s=1
+#                         s==1
 #                 if s==1:
-#                         s=5
+#                         s==5
 #                 if s==5:
-#                         s=10
+#                         s==10
 #                 print(s)
         
         
