@@ -46,23 +46,31 @@ def get_press():
         while True:           
             if(GPIO.input(15)):
                     btn_pressed = True
+                    if s==10:
+                        s=1
+                    elif s==1:
+                        s=5
+                    elif s==5:
+                        s=10
+                print(s)
+                        
             else:            
                     btn_pressed = False
                     #print("not pressed")
-            if btn_pressed:
-                global s
-                print("Pressed")
-                print(s)
-                #get_interval()
+#             if btn_pressed:
+#                 global s
+#                 print("Pressed")
+#                 print(s)
+#                 #get_interval()
                              
                 
-                if s==10:
-                        s=1
-                if s==1:
-                        s=5
-                if s==5:
-                        s=10
-                print(s)
+#                 if s==10:
+#                         s=1
+#                 if s==1:
+#                         s=5
+#                 if s==5:
+#                         s=10
+#                 print(s)
         
         
 def get_interval():
