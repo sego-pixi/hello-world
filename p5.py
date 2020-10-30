@@ -50,11 +50,14 @@ def get_press():
                     if s==10:
                         s=1
                         #time.sleep(3)
+                        delay(3)
                     elif s==1:
                         s=5
+                        delay(3)
                         #time.sleep(3)
                     else:
                         s=10
+                        delay(3)
                         #time.sleep(3)
                     print(s)
        
@@ -64,14 +67,14 @@ def get_press():
                 #print("not pressed")
             return s
                
-#get_press()
+get_press()
     
 def start_helper_thread():
     try:
         start_new_thread(get_press,())
     except:
         print("thread error")
-start_helper_thread()
+#start_helper_thread()
 def printit():
 
             
