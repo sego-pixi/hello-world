@@ -50,7 +50,7 @@ def get_press():
                         s=1
                     elif s==1:
                         s=5
-                    elif s==5:
+                    else:
                         s=10
             print(s)
                         
