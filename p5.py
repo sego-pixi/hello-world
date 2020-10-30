@@ -52,10 +52,10 @@ def get_press():
                         s=1
                         time.sleep(3)
                       
-                    else if s==1:
+                    elif s==1:
                         s=5                       
                         time.sleep(3)
-                    else:
+                    elif s==5:
                         s=10
                         time.sleep(3)
                     print(s)
