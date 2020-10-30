@@ -63,7 +63,7 @@ def get_press():
             else:
                 btn_pressed=False                  
                 #print("not pressed")
-            return s
+            #return s
                
 get_press()
     
