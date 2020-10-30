@@ -79,18 +79,35 @@ def printit():
             
        start_helper_thread()     
        #print(get_press())
-       thread = threading.Timer(s, printit).start()
-       x=chan.voltage-0.5
-       temperature=x/0.01
-       time.sleep(s)
-       #time.sleep(get_press())
-       end=time.time()
-       duration=end-start
-       sec=round(duration)
-        #sec=round(time.perf_counter())
+#        thread = threading.Timer(s, printit).start()
+#        x=chan.voltage-0.5
+#        temperature=x/0.01
+#        time.sleep(s)
+#        #time.sleep(get_press())
+#        end=time.time()
+#        duration=end-start
+#        sec=round(duration)
+#         #sec=round(time.perf_counter())
        
-       print("{:2d}s".format(sec),end='')
-       print("{:-13d} {:-15.1f} C".format(chan1.value,temperature))
+#        print("{:2d}s".format(sec),end='')
+#        print("{:-13d} {:-15.1f} C".format(chan1.value,temperature))
+
+       while True:
+                
+                
+                
+                x=chan.voltage-0.5
+                temperature=x/0.01
+                time.sleep(s)
+                #time.sleep(get_press())
+                end=time.time()
+                duration=end-start
+                sec=round(duration)
+                #sec=round(time.perf_counter())
+       
+                print("{:2d}s".format(sec),end='')
+                print("{:-13d} {:-15.1f} C".format(chan1.value,temperature))
+                
         
                     
 
