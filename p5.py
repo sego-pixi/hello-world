@@ -69,7 +69,7 @@ def start_helper_thread():
         thread.start_new_thread(get_press,())
     except:
         print("thread error")
- start_helper_thread()
+start_helper_thread()
 def printit():
 
             
