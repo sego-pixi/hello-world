@@ -63,16 +63,16 @@ def get_press(s):
             else:
                 btn_pressed=False                  
                 #print("not pressed")
-            #return s
+            return s
                
-#get_press()
+print(get_press(s))
     
 def start_helper_thread():
     try:
         start_new_thread(get_press,(s))
     except:
         print("thread error")
-start_helper_thread()
+#start_helper_thread()
 def printit():
 
             
