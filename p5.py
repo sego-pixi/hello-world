@@ -22,7 +22,7 @@ cs = digitalio.DigitalInOut(board.D5)
 mcp = MCP.MCP3008(spi, cs)
 
 # create an analog input channel on pin 0
-chan = AnalogIn(mcp, MCP.P0)
+chan = AnalogIn(mcp, MCP.P1)
 
 #chanel on pin 1
 chan1= AnalogIn(mcp,MCP.P1)
@@ -32,7 +32,7 @@ print("ADC Voltage: " + str(chan.voltage) + "V")
 x=chan.voltage-0.5
 temperature=x/0.01
 print("Runtime    Temp Reading    Temp") #spaces of 4 between words
-print("0s    {:-10d} {:-15.1f} C".format(chan1.value,temperature))
+print("0s    {:-10d} {:-15.1f} C".format(chan.value,temperature))
 start=time.time()
 #btn_pressed=False
 #interval=[1,5,10]
@@ -78,6 +78,6 @@ def printit():
                 #sec=round(time.perf_counter())
        
                 print("{:2d}s".format(sec),end='')
-                print("{:-13d} {:-15.1f} C".format(chan1.value,temperature))
+                print("{:-13d} {:-15.1f} C".format(chan.value,temperature))
                 
 printit()
