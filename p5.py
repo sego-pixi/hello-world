@@ -49,16 +49,14 @@ def get_press():
                     global s
                     if s==10:
                         s=1
-                        #time.sleep(3)
-                        delay(3)
+                        time.sleep(3)
+                      
                     elif s==1:
-                        s=5
-                        delay(3)
-                        #time.sleep(3)
+                        s=5                       
+                        time.sleep(3)
                     else:
                         s=10
-                        delay(3)
-                        #time.sleep(3)
+                        time.sleep(3)
                     print(s)
        
                         
