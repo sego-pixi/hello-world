@@ -54,9 +54,10 @@ def get_press():
                         s=10
             print(s)
                         
-            else:            
-                    btn_pressed = False
-                    #print("not pressed")
+            else:
+                btn_pressed=False
+                    
+                #print("not pressed")
 #             if btn_pressed:
 #                 global s
 #                 print("Pressed")
