@@ -52,7 +52,7 @@ def get_press():
                         s=5
                     else:
                         s=10
-            print(s)
+                    print(s)
                         
             else:
                 btn_pressed=False
