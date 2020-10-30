@@ -107,7 +107,7 @@ def get_interval():
                 print(count)
                 print(s)
     return s
-#get_press()
+get_press()
     
 def start_helper_thread():
     try:
@@ -133,4 +133,4 @@ def printit():
         
                     
 
-printit()
+#printit()
