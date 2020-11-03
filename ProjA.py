@@ -35,7 +35,7 @@ if (GPIO.input(16)):
     print("  00:00:00")
 
 start=time.time()
-
+print("Press button to start monitoring the sensor")
 def clear(): 
   
     # for windows 
@@ -76,11 +76,11 @@ def pressBtn():
             print("logging has stopped")
             time.sleep(2)
             clear()            
-        else:
-            if (not btn_already_pressed):
+#         else:
+#             if (not btn_already_pressed):
                 
-                print("Press button to start monitoring the sensor")
-                time.sleep(5)
+#                 print("Press button to start monitoring the sensor")
+#                 time.sleep(5)
             ##clear screen
             
             #print("logging has stopped")
