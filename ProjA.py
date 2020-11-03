@@ -9,6 +9,7 @@ import RPi.GPIO as GPIO
 from _thread import start_new_thread
 from datetime import datetime
 from os import system, name
+import sys
 
 #this is for the start/stop button (Changed pin to 16)
 GPIO.setmode(GPIO.BCM)
@@ -47,7 +48,8 @@ def clear():
     else: 
         _ = system('clear') 
         
-btn_already_pressed=False
+#btn_already_pressed=False
+count=0;
 
 def printit():
         thread = threading.Timer(5, printit).start()      
@@ -68,16 +70,19 @@ def printit():
 
 def pressBtn():
     global btn_already_pressed;
+    global count
     while True:
         if(GPIO.input(16)):
             #this means button is pressed want to start temp
-            btn_already_pressed=True
+            #btn_already_pressed=True
+            count=1;
             print("logging started")
             printit()
-        if(GPIO.input(16)) and btn_already_pressed:
+        if(GPIO.input(16)) and count==1:
             print("logging has stopped")
             time.sleep(2)
-            clear()            
+            clear() 
+            sys.exit
 #         else:
 #             if (not btn_already_pressed):
                 
