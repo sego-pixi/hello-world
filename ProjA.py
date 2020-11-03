@@ -8,6 +8,7 @@ from adafruit_mcp3xxx.analog_in import AnalogIn
 import RPi.GPIO as GPIO
 from _thread import start_new_thread
 from datetime import datetime
+from os import system, name
 
 #this is for the start/stop button (Changed pin to 16)
 GPIO.setmode(GPIO.BCM)
