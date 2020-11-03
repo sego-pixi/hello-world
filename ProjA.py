@@ -77,7 +77,7 @@ def pressBtn():
             time.sleep(2)
             clear()            
         else:
-            if (!btn_already_pressed):
+            if (not btn_already_pressed):
                 
                 print("Press button to start monitoring the sensor")
                 time.sleep(5)
