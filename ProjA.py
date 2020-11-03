@@ -67,6 +67,7 @@ def printit():
 #printit()
 
 def pressBtn():
+    global btn_already_pressed;
     while True:
         if(GPIO.input(16)):
             #this means button is pressed want to start temp
