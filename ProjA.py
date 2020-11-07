@@ -106,6 +106,6 @@ def pressBtn():
             #print("logging has stopped")
             #time.sleep(2)
             #clear()
-GPIO.cleanup() # release pins from this operation
-time.sleep(1)#allow all the threads to finish
+#GPIO.cleanup() # release pins from this operation
+#time.sleep(1)#allow all the threads to finish
 pressBtn()
