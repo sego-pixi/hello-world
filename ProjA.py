@@ -74,10 +74,18 @@ def printit():
 #printit()
 
 def pressBtn():
+    
+#     global btn_already_pressed;
     global count
-  
-    if(GPIO.input(16)):
-      
+    while True:
+#     #start_helper_thread() 
+#     #complete=False
+#     #while complete==False:
+        
+        if(GPIO.input(16)):
+#             #complete=False
+#             #this means button is pressed want to start temp
+#             #btn_already_pressed=True
             count=1;
             print("logging started")
             now= datetime.now()
@@ -89,46 +97,14 @@ def pressBtn():
             print("  00:00:00",end="")
             print("{:-8.1f} C".format(temperature))
             printit()
-     
-    if(GPIO.input(16)) and count==1:
-      
+        if(GPIO.input(16)) and count==1:
             
             print("logging has stopped")
             time.sleep(2)
             clear() 
-            sys.exit()
-      
-  
-#     global btn_already_pressed;
-#     global count
-#     while True:
-#     #start_helper_thread() 
-#     #complete=False
-#     #while complete==False:
-        
-#         if(GPIO.input(16)):
-#             #complete=False
-#             #this means button is pressed want to start temp
-#             #btn_already_pressed=True
-#             count=1;
-#             print("logging started")
-#             now= datetime.now()
-#             current_time = now.strftime("%H:%M:%S")
-#             x=chan.voltage-0.5
-#             temperature=x/0.01
-#             print("Time      Sys Timer  Temp") #spaces of 4 between words
-#             print(current_time,end="")
-#             print("  00:00:00",end="")
-#             print("{:-8.1f} C".format(temperature))
-#             printit()
-#         if(GPIO.input(16)) and count==1:
-            
-#             print("logging has stopped")
-#             time.sleep(2)
-#             clear() 
 #             _thread.join()
 #             cleanup_stop_thread()
-#             sys.exit()
+            sys.exit()
             #complete=True
 #             break
         
