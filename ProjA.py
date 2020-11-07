@@ -94,7 +94,7 @@ def pressBtn():
             print("logging has stopped")
             time.sleep(2)
             clear() 
-            sys.exit()
+            sys.exit(0)
             complete=True
 #             break
         
