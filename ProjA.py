@@ -89,7 +89,9 @@ def pressBtn():
             print("  00:00:00",end="")
             print("{:-8.1f} C".format(temperature))
             printit()
-     if(GPIO.input(16)) and count==1:
+     
+    if(GPIO.input(16)) and count==1:
+      
             
             print("logging has stopped")
             time.sleep(2)
