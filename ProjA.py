@@ -83,6 +83,7 @@ def pressBtn():
             time.sleep(2)
             clear() 
             sys.exit
+            break
 #         else:
 #             if (not btn_already_pressed):
                 
