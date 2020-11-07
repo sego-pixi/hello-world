@@ -58,9 +58,9 @@ def printit():
     end=time.time()
     duration=end-start
     secs=round(duration)
-     m, s = divmod(secs, 60)
-     h, m = divmod(m, 60)
-     print('  {:02d}:{:02d}:{:02d}'.format(h, m, s))  
+    m, s = divmod(secs, 60)
+    h, m = divmod(m, 60)
+    print('  {:02d}:{:02d}:{:02d}'.format(h, m, s))  
         #thread = threading.Timer(5, printit).start()  
         #start_helper_thread() 
 #         while True:            
