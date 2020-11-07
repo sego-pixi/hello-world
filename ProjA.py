@@ -49,6 +49,8 @@ def start_helper_thread():
         print("thread error")
 def printit():
     
+    x=chan.voltage-0.5
+    temperature=x/0.01
     thread = threading.Timer(5, printit).start()
     now= datetime.now()
     time.sleep(5)
@@ -60,7 +62,9 @@ def printit():
     secs=round(duration)
     m, s = divmod(secs, 60)
     h, m = divmod(m, 60)
-    print('  {:02d}:{:02d}:{:02d}'.format(h, m, s))  
+    
+    print('  {:02d}:{:02d}:{:02d}'.format(h, m, s),end="") 
+    print("{:-15.1f} C".format(temperature))
         #thread = threading.Timer(5, printit).start()  
         #start_helper_thread() 
 #         while True:            
@@ -85,9 +89,12 @@ def pressBtn():
             print("logging started")
             now= datetime.now()
             current_time = now.strftime("%H:%M:%S")
+            x=chan.voltage-0.5
+            temperature=x/0.01
             print("Time      Sys Timer  Temp") #spaces of 4 between words
             print(current_time,end="")
-            print("  00:00:00")
+            print("  00:00:00",end="")
+            print("{:-15.1f} C".format(temperature))
             printit()
         if(GPIO.input(16)) and count==1:
             
