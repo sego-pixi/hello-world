@@ -52,7 +52,7 @@ def clear():
 count=0;
 
 def printit():
-        thread = threading.Timer(5, printit).start()      
+        #thread = threading.Timer(5, printit).start()      
         now= datetime.now()
         time.sleep(5)
         current_time = now.strftime("%H:%M:%S")
@@ -81,8 +81,7 @@ def pressBtn():
             #btn_already_pressed=True
             count=1;
             print("logging started")
-#             now= datetime.now()
-            now=time.time()
+            now= datetime.now()
             current_time = now.strftime("%H:%M:%S")
             print("Time      Sys Timer  Temp") #spaces of 4 between words
             print(current_time,end="")
