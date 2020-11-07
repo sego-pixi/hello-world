@@ -27,14 +27,14 @@ mcp = MCP.MCP3008(spi, cs)
 # create an analog input channel on pin 1
 chan = AnalogIn(mcp, MCP.P1)
 
-if (GPIO.input(16)):
+# if (GPIO.input(16)):
     
-    #first line print out
-    now= datetime.now()
-    current_time = now.strftime("%H:%M:%S")
-    print("Time      Sys Timer  Temp") #spaces of 4 between words
-    print(current_time,end="")
-    print("  00:00:00")
+#     #first line print out
+#     now= datetime.now()
+#     current_time = now.strftime("%H:%M:%S")
+#     print("Time      Sys Timer  Temp") #spaces of 4 between words
+#     print(current_time,end="")
+#     print("  00:00:00")
 
 start=time.time()
 print("Press button to start monitoring the sensor")
@@ -81,6 +81,11 @@ def pressBtn():
             #btn_already_pressed=True
             count=1;
             print("logging started")
+            now= datetime.now()
+            current_time = now.strftime("%H:%M:%S")
+            print("Time      Sys Timer  Temp") #spaces of 4 between words
+            print(current_time,end="")
+            print("  00:00:00")
             printit()
         if(GPIO.input(16)) and count==1:
             
