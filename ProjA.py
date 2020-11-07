@@ -71,18 +71,24 @@ def printit():
 def pressBtn():
     global btn_already_pressed;
     global count
-    while True:
+    #while True:
+    complete=False
+    while complete==False:
+        
         if(GPIO.input(16)):
+            complete=False
             #this means button is pressed want to start temp
             #btn_already_pressed=True
             count=1;
             print("logging started")
             printit()
         if(GPIO.input(16)) and count==1:
+            
             print("logging has stopped")
             time.sleep(2)
             clear() 
             sys._exit()
+            complete=True
 #             break
 #         else:
 #             if (not btn_already_pressed):
