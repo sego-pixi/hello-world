@@ -81,7 +81,8 @@ def pressBtn():
             #btn_already_pressed=True
             count=1;
             print("logging started")
-            now= datetime.now()
+#             now= datetime.now()
+            now=time.time()
             current_time = now.strftime("%H:%M:%S")
             print("Time      Sys Timer  Temp") #spaces of 4 between words
             print(current_time,end="")
