@@ -95,6 +95,7 @@ def pressBtn():
             sys.exit()
             complete=True
 #             break
+        break
 #         else:
 #             if (not btn_already_pressed):
                 
