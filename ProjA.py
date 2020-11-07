@@ -90,7 +90,7 @@ def pressBtn():
         if(GPIO.input(16)) and count==1:
             
             print("logging has stopped")
-            time.sleep(5)
+            time.sleep(2)
             clear() 
             sys.exit()
             complete=True
