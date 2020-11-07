@@ -104,7 +104,11 @@ def pressBtn():
             print("logging has stopped")
             time.sleep(2)
             clear() 
-            os.killpg(p.pid, signal.SIGTERM)
+            #os.killpg(p.pid, signal.SIGTERM)
+            subOut = subprocess.Popen(['your', 'subprocess', ...], preexec_fn=os.setgrp)
+
+# when it's time to kill
+            os.killpg(os.getpgid(subOut.pid), signal.SIGTERM)
 #             _thread.join()
 #             cleanup_stop_thread()
             #sys.exit()
