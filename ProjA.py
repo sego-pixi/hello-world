@@ -51,19 +51,26 @@ def clear():
 #btn_already_pressed=False
 count=0;
 
+def start_helper_thread():
+    try:
+        start_new_thread(get_press,())
+    except:
+        print("thread error")
 def printit():
-        #thread = threading.Timer(5, printit).start()      
-        now= datetime.now()
-        time.sleep(5)
-        current_time = now.strftime("%H:%M:%S")
-        print(current_time,end="")           
-        #time.sleep(5)
-        end=time.time()
-        duration=end-start
-        secs=round(duration)
-        m, s = divmod(secs, 60)
-        h, m = divmod(m, 60)
-        print('  {:02d}:{:02d}:{:02d}'.format(h, m, s))          
+        #thread = threading.Timer(5, printit).start()  
+        start_helper_thread() 
+        while True:            
+            now= datetime.now()
+            time.sleep(5)
+            current_time = now.strftime("%H:%M:%S")
+            print(current_time,end="")           
+            #time.sleep(5)
+            end=time.time()
+            duration=end-start
+            secs=round(duration)
+            m, s = divmod(secs, 60)
+            h, m = divmod(m, 60)
+            print('  {:02d}:{:02d}:{:02d}'.format(h, m, s))          
 
               
 #printit()
