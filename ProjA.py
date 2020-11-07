@@ -27,15 +27,6 @@ mcp = MCP.MCP3008(spi, cs)
 # create an analog input channel on pin 1
 chan = AnalogIn(mcp, MCP.P1)
 
-# if (GPIO.input(16)):
-    
-#     #first line print out
-#     now= datetime.now()
-#     current_time = now.strftime("%H:%M:%S")
-#     print("Time      Sys Timer  Temp") #spaces of 4 between words
-#     print(current_time,end="")
-#     print("  00:00:00")
-
 start=time.time()
 print("Press button to start monitoring the sensor")
 def clear(): 
@@ -57,20 +48,23 @@ def start_helper_thread():
     except:
         print("thread error")
 def printit():
+    
+    thread = threading.Timer(5, printit).start()
+    now= datetime.now()
+    time.sleep(5)
+    current_time = now.strftime("%H:%M:%S")
+    print(current_time,end="")           
+            #time.sleep(5)
+    end=time.time()
+    duration=end-start
+    secs=round(duration)
+     m, s = divmod(secs, 60)
+     h, m = divmod(m, 60)
+     print('  {:02d}:{:02d}:{:02d}'.format(h, m, s))  
         #thread = threading.Timer(5, printit).start()  
         #start_helper_thread() 
-        while True:            
-            now= datetime.now()
-            time.sleep(5)
-            current_time = now.strftime("%H:%M:%S")
-            print(current_time,end="")           
-            #time.sleep(5)
-            end=time.time()
-            duration=end-start
-            secs=round(duration)
-            m, s = divmod(secs, 60)
-            h, m = divmod(m, 60)
-            print('  {:02d}:{:02d}:{:02d}'.format(h, m, s))          
+#         while True:            
+                    
 
               
 #printit()
@@ -79,7 +73,7 @@ def pressBtn():
     global btn_already_pressed;
     global count
     #while True:
-    start_helper_thread() 
+    #start_helper_thread() 
     complete=False
     while complete==False:
         
