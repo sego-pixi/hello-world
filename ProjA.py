@@ -53,12 +53,12 @@ count=0;
 
 def start_helper_thread():
     try:
-        start_new_thread(pressBtn,())
+        start_new_thread(printit,())
     except:
         print("thread error")
 def printit():
         #thread = threading.Timer(5, printit).start()  
-        start_helper_thread() 
+        #start_helper_thread() 
         while True:            
             now= datetime.now()
             time.sleep(5)
@@ -79,6 +79,7 @@ def pressBtn():
     global btn_already_pressed;
     global count
     #while True:
+    start_helper_thread() 
     complete=False
     while complete==False:
         
