@@ -107,5 +107,5 @@ def pressBtn():
             #time.sleep(2)
             #clear()
 GPIO.cleanup() # release pins from this operation
-sleep(1)#allow all the threads to finish
+time.sleep(1)#allow all the threads to finish
 pressBtn()
