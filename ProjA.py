@@ -10,6 +10,8 @@ from _thread import start_new_thread
 from datetime import datetime
 from os import system, name
 import sys
+import subprocess, os
+import signal
 
 #this is for the start/stop button (Changed pin to 16)
 GPIO.setmode(GPIO.BCM)
@@ -102,9 +104,10 @@ def pressBtn():
             print("logging has stopped")
             time.sleep(2)
             clear() 
+            os.killpg(p.pid, signal.SIGTERM)
 #             _thread.join()
 #             cleanup_stop_thread()
-            sys.exit()
+            #sys.exit()
             #complete=True
 #             break
         
