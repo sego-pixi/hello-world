@@ -53,7 +53,7 @@ count=0;
 
 def start_helper_thread():
     try:
-        start_new_thread(get_press,())
+        start_new_thread(pressBtn,())
     except:
         print("thread error")
 def printit():
