@@ -90,12 +90,12 @@ def pressBtn():
         if(GPIO.input(16)) and count==1:
             
             print("logging has stopped")
-            time.sleep(2)
+            time.sleep(5)
             clear() 
             sys.exit()
             complete=True
 #             break
-        break
+        
 #         else:
 #             if (not btn_already_pressed):
                 
@@ -106,4 +106,6 @@ def pressBtn():
             #print("logging has stopped")
             #time.sleep(2)
             #clear()
+GPIO.cleanup() # release pins from this operation
+sleep(1)#allow all the threads to finish
 pressBtn()
