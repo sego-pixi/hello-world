@@ -111,6 +111,7 @@ def pressBtn():
               print("logging has stopped")
               time.sleep(2)
               clear() 
+              print("has cleared")
               exit()
               #thread._Thread_stop()
               thread.join()
