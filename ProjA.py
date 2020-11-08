@@ -110,7 +110,7 @@ def pressBtn():
               print("logging has stopped")
               time.sleep(2)
               clear() 
-              sys.exit()
+              exit()
 #             print("logging started")
 #             count=1
 #             now= datetime.now()
