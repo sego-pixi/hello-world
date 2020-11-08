@@ -62,7 +62,7 @@ def get_press():
                     elif t==5:
                         t=10
                         time.sleep(3)
-                    print(s)
+                    print(t)
        
                         
             else:
