@@ -113,7 +113,7 @@ def pressBtn():
               time.sleep(2)
               clear() 
               print("has cleared")
-              system.exit()
+              exit(0)
               #thread._Thread_stop()
               thread.join()
               break
