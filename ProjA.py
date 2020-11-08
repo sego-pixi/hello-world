@@ -56,7 +56,7 @@ def start_helper_thread():
 def printit():
     
     x=chan.voltage-0.5
-    temperature=x/0.01
+    temperature=x/0.1
     thread = threading.Timer(5, printit).start()
     now= datetime.now()
     time.sleep(5)
