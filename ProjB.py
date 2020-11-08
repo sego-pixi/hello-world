@@ -30,7 +30,7 @@ mcp = MCP.MCP3008(spi, cs)
 
 # create an analog input channel on pin 1
 chan = AnalogIn(mcp, MCP.P1)
-s=5#initially
+t=5#initially
 start=time.time()
 print("Press button to start monitoring the sensor")
 
@@ -51,16 +51,16 @@ def get_press():
         while True:           
             if(GPIO.input(15)):
                     #btn_pressed = True
-                    global s
-                    if s==10:
-                        s=1
+                    global t
+                    if t==10:
+                        t=2
                         time.sleep(3)
                       
-                    elif s==1:
-                        s=5                       
+                    elif t==2:
+                        t=5                       
                         time.sleep(3)
-                    elif s==5:
-                        s=10
+                    elif t==5:
+                        t=10
                         time.sleep(3)
                     print(s)
        
@@ -76,13 +76,13 @@ def start_helper_thread():
         print("thread error")
         
 def printit():     
-       global s
+       global t
        start_helper_thread()     
        while True:
         x=chan.voltage-0.5
         temperature=x/0.01
         #thread = threading.Timer(5, printit).start()
-        time.sleep(s)
+        time.sleep(t)
         now= datetime.now()        
         current_time = now.strftime("%H:%M:%S")
         print(current_time,end="")           
