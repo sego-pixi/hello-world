@@ -113,7 +113,7 @@ def pressBtn():
               clear() 
               exit()
               #thread._Thread_stop()
-              thread.join()
+              #thread.join()
               break
 #             print("logging started")
 #             count=1
