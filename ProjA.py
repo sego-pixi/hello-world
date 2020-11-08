@@ -112,6 +112,7 @@ def pressBtn():
               clear() 
               sys.exit()
 #             print("logging started")
+#             count=1
 #             now= datetime.now()
 #             current_time = now.strftime("%H:%M:%S")
 #             x=chan.voltage-0.5
