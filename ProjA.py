@@ -111,6 +111,7 @@ def pressBtn():
               time.sleep(2)
               clear() 
               exit()
+              break
 #             print("logging started")
 #             count=1
 #             now= datetime.now()
