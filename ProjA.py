@@ -40,6 +40,7 @@ def clear():
     # for windows 
     if name == 'nt': 
         _ = system('cls') 
+        sys.exit()
   
     # for mac and linux(here, os.name is 'posix') 
     else: 
