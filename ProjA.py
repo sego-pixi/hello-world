@@ -30,6 +30,7 @@ mcp = MCP.MCP3008(spi, cs)
 chan = AnalogIn(mcp, MCP.P1)
 
 #start=time.time()
+start=0
 print("Press button to start monitoring the sensor")
 def clear(): 
   
