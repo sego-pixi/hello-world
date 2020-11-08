@@ -112,7 +112,7 @@ def pressBtn():
               print("logging has stopped")
               time.sleep(2)
               clear() 
-              os.system("sudo shutdown -h now")
+              #os.system("sudo shutdown -h now")
               print("has cleared")
               exit(0)
               #thread._Thread_stop()
