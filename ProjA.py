@@ -29,7 +29,7 @@ mcp = MCP.MCP3008(spi, cs)
 # create an analog input channel on pin 1
 chan = AnalogIn(mcp, MCP.P1)
 
-start=time.time()
+#start=time.time()
 print("Press button to start monitoring the sensor")
 def clear(): 
   
@@ -88,6 +88,7 @@ def pressBtn():
 #             #complete=False
 #             #this means button is pressed want to start temp
 #             #btn_already_pressed=True
+            start=time.time()
             count=1;
             print("logging started")
             now= datetime.now()
