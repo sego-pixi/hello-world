@@ -13,6 +13,7 @@ from os import system, name
 import sys
 import subprocess, os
 import signal
+import subprocess
 
 #this is for the start/stop button (Changed pin to 16)
 GPIO.setmode(GPIO.BCM)
@@ -112,6 +113,7 @@ def pressBtn():
               print("logging has stopped")
               time.sleep(2)
               clear() 
+              subprocess.Popen(["ProjA.py"]).terminate()
               #os.system("sudo shutdown -h now")
               print("has cleared")
               exit(0)
