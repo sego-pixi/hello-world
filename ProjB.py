@@ -75,7 +75,8 @@ def start_helper_thread():
     except:
         print("thread error")
         
-def printit():            
+def printit():     
+       global s
        start_helper_thread()     
        while True:
         x=chan.voltage-0.5
