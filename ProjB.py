@@ -80,9 +80,9 @@ def printit():
        while True:
         x=chan.voltage-0.5
         temperature=x/0.01
-        thread = threading.Timer(5, printit).start()
-        now= datetime.now()
-        time.sleep(5)
+        #thread = threading.Timer(5, printit).start()
+        time.sleep(s)
+        now= datetime.now()        
         current_time = now.strftime("%H:%M:%S")
         print(current_time,end="")           
                 #time.sleep(5)
