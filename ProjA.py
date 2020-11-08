@@ -56,7 +56,7 @@ def start_helper_thread():
 def printit():
     
     x=chan.voltage-0.5
-    temperature=x/0.01
+    temperature=x/0.1
     thread = threading.Timer(5, printit).start()
     now= datetime.now()
     time.sleep(5)
@@ -100,7 +100,7 @@ def pressBtn():
                 now= datetime.now()
                 current_time = now.strftime("%H:%M:%S")
                 x=chan.voltage-0.5
-                temperature=x/0.01
+                temperature=x/0.1
                 print("Time      Sys Timer  Temp") #spaces of 4 between words
                 print(current_time,end="")
                 print("  00:00:00",end="")
