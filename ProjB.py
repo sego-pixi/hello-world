@@ -37,11 +37,13 @@ chan = AnalogIn(mcp, MCP.P0)
 t=5#initially
 start=time.time()
 print("Press button to start monitoring the sensor")
-
-@blynk.VIRTUAL_WRITE(1)
+WidgetTerminal terminal(V1)
+#@blynk.VIRTUAL_WRITE(1)
 def read_pin(pin):
   sensor_data=20
   blynk.virtual_write(1,sensor_data)
+  terminal.print("hey")
+  terminal.flush
   
   
 def clear(): 
