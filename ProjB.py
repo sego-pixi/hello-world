@@ -72,6 +72,8 @@ def get_press():
             
               
             if(GPIO.input(15)) and count2==0:
+                    if(GPIO.input(16)):
+                        count2=1
                     #btn_pressed = True
                     global t
                     if t==10:
