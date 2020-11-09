@@ -112,9 +112,10 @@ def pressBtn():
                 count=1;
             elif count==1:
               print("logging has stopped")
-              time.sleep(7)
+              time.sleep(4)
               clear()
-              print("you can now exit the program")
+              
+              print("Logging has stopped you can now exit the program")
               time.sleep(15)
               
 #               print("has cleared")
