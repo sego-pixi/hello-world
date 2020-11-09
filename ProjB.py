@@ -38,17 +38,17 @@ t=5#initially
 start=time.time()
 print("Press button to start monitoring the sensor")
 
-@blynk.VIRTUAL_WRITE(1)
-def write_to_pin(value):
-  print('Current V1 value: {}'.format(value))
-  #sensor_data=20
-  #blynk.virtual_write(1,sensor_data)
-  #blynk.virtual_write(pin,25)
-@blynk.VIRTUAL_READ(2)
-def my_user_task():
-    # this widget will show some time in seconds..
-    blynk.virtual_write(2, 45)
-    blynk.virtual_write(3, 50)
+# @blynk.VIRTUAL_WRITE(1)
+# def write_to_pin(value):
+#   print('Current V1 value: {}'.format(value))
+#   #sensor_data=20
+#   #blynk.virtual_write(1,sensor_data)
+#   #blynk.virtual_write(pin,25)
+# @blynk.VIRTUAL_READ(2)
+# def my_user_task():
+#     # this widget will show some time in seconds..
+#     blynk.virtual_write(2, 45)
+#     blynk.virtual_write(3, 50)
  
   
   
@@ -66,8 +66,11 @@ def clear():
 count=0;
 
 def get_press():
-        while True:           
-            if(GPIO.input(15)):
+        while True:    
+            if(GPIO.input(16)):
+                count=1;
+              
+            if(GPIO.input(15)) and count==0:
                     #btn_pressed = True
                     global t
                     if t==10:
@@ -84,6 +87,12 @@ def get_press():
        
                         
             else:
+            print("logging has stopped")
+            time.sleep(4)
+            clear()              
+            print("Logging has stopped you can now exit the program")
+            time.sleep(15)
+            break
                 btn_pressed=False
 
               
@@ -130,7 +139,7 @@ def pressBtn():
             #sensor_data=20
             #blynk.virtual_write(1,sensor_data)
             #write_to_pin(4)
-            blynk.run
+           # blynk.run
             now= datetime.now()
             current_time = now.strftime("%H:%M:%S")
             x=chan.voltage-0.5
