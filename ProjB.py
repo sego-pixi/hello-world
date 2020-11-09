@@ -12,6 +12,10 @@ from os import system, name
 import sys
 import subprocess, os
 import signal
+import blynklib
+
+BLYNK_AUTH=" 7t6Q72qVqWmrxPWydL0F18TEWejod_7P"
+blynk=blynklib.Blynk(BLYNK_AUTH)
 
 #this is for the start/stop button (Changed pin to 16)
 GPIO.setmode(GPIO.BCM)
@@ -34,6 +38,12 @@ t=5#initially
 start=time.time()
 print("Press button to start monitoring the sensor")
 
+
+def read_pin(pin):
+  sensor_data=20
+  blynk.virtual_write(1,sensor_data)
+  
+  
 def clear(): 
   
     # for windows 
@@ -109,6 +119,7 @@ def pressBtn():
           if count==0:
             
             print("logging started")
+            blynk.run
             now= datetime.now()
             current_time = now.strftime("%H:%M:%S")
             x=chan.voltage-0.5
