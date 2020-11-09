@@ -118,9 +118,10 @@ def pressBtn():
             print("  00:00:00",end="")
             print("{:-8.1f} C".format(temperature))
             count=1
+            print("now 1")
             printit()
             
-          elif count==1:
+          if count==1:
             print("logging has stopped")
             time.sleep(4)
             clear()              
