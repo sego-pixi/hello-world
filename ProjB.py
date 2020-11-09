@@ -44,6 +44,10 @@ def write_to_pin(value):
   #sensor_data=20
   #blynk.virtual_write(1,sensor_data)
   #blynk.virtual_write(pin,25)
+@blynk.VIRTUAL_READ(2)
+def my_read_handler():
+    # this widget will show some time in seconds..
+    blynk.virtual_write(2, int(time.time()))
  
   
   
