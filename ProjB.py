@@ -67,8 +67,7 @@ count=0;
 
 def get_press():
         while True:    
-            if(GPIO.input(16)):
-                count=1;
+            
               
             if(GPIO.input(15)) and count==0:
                     #btn_pressed = True
@@ -84,7 +83,8 @@ def get_press():
                         t=10
                         time.sleep(3)
                     print(t)
-       
+            if(GPIO.input(16)):
+                count=1;
                         
             else:
             
