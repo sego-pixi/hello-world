@@ -73,7 +73,9 @@ def get_press():
               
             if(GPIO.input(15)) and count2==0:
                     if(GPIO.input(16)):
+                        print("Pushed")
                         count2=1
+                        clear()
                     #btn_pressed = True
                     global t
                     if t==10:
@@ -90,8 +92,7 @@ def get_press():
             elif(GPIO.input(16)):
                 count2=0;
                         
-            if count2==1:
-            
+            if count2==1:            
                 print("2..logging has stopped")
                 time.sleep(4)
                 clear()              
