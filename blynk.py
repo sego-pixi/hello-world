@@ -5,7 +5,7 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(3,GPIO.OUT)
 GPIO.setwarnings(False)
 
-BLYNK_AUTH='7t6Q72qVqWmrxPWydL0F18TEWejod_7P'
+BLYNK_AUTH='a6fj-_7TkJ3rY5KNaptlE7f5hVBEcljg'
 blynk=BlynkLib.Blynk(BLYNK_AUTH)
 
 @blynk.VIRTUAL_WRITE(1)
