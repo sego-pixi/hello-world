@@ -85,7 +85,8 @@ def pressBtn():
     
 #     global btn_already_pressed;
     global count
-    while True:
+    running=True
+    while running:
 #     #start_helper_thread() 
 #     #complete=False
 #     #while complete==False:
@@ -113,9 +114,10 @@ def pressBtn():
               print("logging has stopped")
               time.sleep(2)
               clear() 
-              subprocess.Popen(["ProjA.py"]).terminate()
+              #subprocess.Popen(["ProjA.py"]).terminate()
               #os.system("sudo shutdown -h now")
               print("has cleared")
+              running=False
               exit(0)
               #thread._Thread_stop()
               thread.join()
