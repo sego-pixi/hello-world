@@ -41,8 +41,8 @@ print("Press button to start monitoring the sensor")
 #@blynk.VIRTUAL_WRITE(1)
 def read_pin(pin):
   sensor_data=20
-  blynk.virtual_write(1,sensor_data)
-  blynk.virtual_write(4,25)
+  #blynk.virtual_write(1,sensor_data)
+  blynk.virtual_write(pin,25)
  
   
   
@@ -123,7 +123,7 @@ def pressBtn():
             print("logging started")
             #sensor_data=20
             #blynk.virtual_write(1,sensor_data)
-            read_pin(pin)
+            read_pin(4)
             blynk.run
             now= datetime.now()
             current_time = now.strftime("%H:%M:%S")
