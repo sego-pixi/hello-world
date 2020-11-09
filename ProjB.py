@@ -124,7 +124,7 @@ def pressBtn():
             print("logging started")
             #sensor_data=20
             #blynk.virtual_write(1,sensor_data)
-            write_to_pin(4)
+            #write_to_pin(4)
             blynk.run
             now= datetime.now()
             current_time = now.strftime("%H:%M:%S")
