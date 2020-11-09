@@ -90,7 +90,7 @@ def get_press():
                         
             else:
             
-                print("logging has stopped")
+                print("2..logging has stopped")
                 time.sleep(4)
                 clear()              
                 print("Logging has stopped you can now exit the program")
