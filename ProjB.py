@@ -111,9 +111,9 @@ def printit():
        start_helper_thread()     
        while True:
         if(GPIO.input(16)) and count2==0:         
-            if(GPIO.input(16)):
-             count2=1
-            else:
+#             if(GPIO.input(16)):
+#              count2=1
+#             else:
               x=chan.voltage-0.5
               temperature=x/0.1
               #thread = threading.Timer(5, printit).start()
