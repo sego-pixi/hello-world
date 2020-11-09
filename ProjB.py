@@ -86,9 +86,9 @@ def get_press():
                         time.sleep(3)
                     print(t)
             elif(GPIO.input(16)):
-                count2=1;
+                count2=0;
                         
-            else:
+            if count2==1:
             
                 print("2..logging has stopped")
                 time.sleep(4)
