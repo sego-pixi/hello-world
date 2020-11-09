@@ -64,12 +64,14 @@ def clear():
         
 #btn_already_pressed=False
 count=0;
+count2=0
 
 def get_press():
+        global count2
         while True:    
             
               
-            if(GPIO.input(15)) and count==0:
+            if(GPIO.input(15)) and count2==1:
                     #btn_pressed = True
                     global t
                     if t==10:
@@ -83,8 +85,8 @@ def get_press():
                         t=10
                         time.sleep(3)
                     print(t)
-            if(GPIO.input(16)):
-                count=1;
+            else if(GPIO.input(16)):
+                count2=1;
                         
             else:
             
