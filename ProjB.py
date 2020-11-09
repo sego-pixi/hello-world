@@ -111,24 +111,25 @@ def printit():
        start_helper_thread()     
        while True:
         if(GPIO.input(16)) and count2==0:         
-            
-            x=chan.voltage-0.5
-            temperature=x/0.1
-            #thread = threading.Timer(5, printit).start()
-            time.sleep(t)
-            now= datetime.now()        
-            current_time = now.strftime("%H:%M:%S")
-            print(current_time,end="")           
-                    #time.sleep(5)
-            end=time.time()
-            duration=end-start
-            secs=round(duration)
-            m, s = divmod(secs, 60)
-            h, m = divmod(m, 60)
-            print('  {:02d}:{:02d}:{:02d}'.format(h, m, s),end="") 
-            print("{:-8.1f} C".format(temperature))
             if(GPIO.input(16)):
              count2=1
+            else:
+              x=chan.voltage-0.5
+              temperature=x/0.1
+              #thread = threading.Timer(5, printit).start()
+              time.sleep(t)
+              now= datetime.now()        
+              current_time = now.strftime("%H:%M:%S")
+              print(current_time,end="")           
+                      #time.sleep(5)
+              end=time.time()
+              duration=end-start
+              secs=round(duration)
+              m, s = divmod(secs, 60)
+              h, m = divmod(m, 60)
+              print('  {:02d}:{:02d}:{:02d}'.format(h, m, s),end="") 
+              print("{:-8.1f} C".format(temperature))
+            
             
         if count2==1:
             print("1..logging has stopped")
