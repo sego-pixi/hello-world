@@ -112,54 +112,14 @@ def pressBtn():
                 count=1;
             elif count==1:
               print("logging has stopped")
-              time.sleep(2)
+              time.sleep(5)
               clear() 
-              #subprocess.Popen(["ProjA.py"]).terminate()
-              #os.system("sudo shutdown -h now")
-              print("has cleared")
-              running=False
-              exit(0)
-              #thread._Thread_stop()
-              thread.join()
-              break
-#             print("logging started")
-#             count=1
-#             now= datetime.now()
-#             current_time = now.strftime("%H:%M:%S")
-#             x=chan.voltage-0.5
-#             temperature=x/0.01
-#             print("Time      Sys Timer  Temp") #spaces of 4 between words
-#             print(current_time,end="")
-#             print("  00:00:00",end="")
-#             print("{:-8.1f} C".format(temperature))
-#             printit()
-#         if(GPIO.input(16)) and count==1:
-            
-#             print("logging has stopped")
-#             time.sleep(2)
-#             clear() 
-#             sys.exit()
-            #os.killpg(p.pid, signal.SIGTERM)
-            #subOut = subprocess.Popen(['your', 'subprocess', ...], preexec_fn=os.setgrp)
+              
+#               print("has cleared")
+#               running=False
+#               exit(0)
+#               #thread._Thread_stop()
+#               thread.join()
+#               break
 
-# when it's time to kill
-            #os.killpg(os.getpgid(subOut.pid), signal.SIGTERM)
-#             _thread.join()
-#             cleanup_stop_thread()
-            #sys.exit()
-            #complete=True
-#             break
-        
-#         else:
-#             if (not btn_already_pressed):
-                
-#                 print("Press button to start monitoring the sensor")
-#                 time.sleep(5)
-            ##clear screen
-            
-            #print("logging has stopped")
-            #time.sleep(2)
-            #clear()
-#GPIO.cleanup() # release pins from this operation
-#time.sleep(1)#allow all the threads to finish
 pressBtn()
