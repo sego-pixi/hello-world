@@ -85,7 +85,7 @@ def get_press():
                         t=10
                         time.sleep(3)
                     print(t)
-            else if(GPIO.input(16)):
+            elif(GPIO.input(16)):
                 count2=1;
                         
             else:
