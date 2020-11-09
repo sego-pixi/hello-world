@@ -29,7 +29,7 @@ cs = digitalio.DigitalInOut(board.D5)
 mcp = MCP.MCP3008(spi, cs)
 
 # create an analog input channel on pin 1
-chan = AnalogIn(mcp, MCP.P1)
+chan = AnalogIn(mcp, MCP.P0)
 t=5#initially
 start=time.time()
 print("Press button to start monitoring the sensor")
@@ -80,7 +80,7 @@ def printit():
        start_helper_thread()     
        while True:
         x=chan.voltage-0.5
-        temperature=x/0.01
+        temperature=x/0.1
         #thread = threading.Timer(5, printit).start()
         time.sleep(t)
         now= datetime.now()        
@@ -111,7 +111,7 @@ def pressBtn():
           now= datetime.now()
           current_time = now.strftime("%H:%M:%S")
           x=chan.voltage-0.5
-          temperature=x/0.01
+          temperature=x/0.1
           print("Time      Sys Timer  Temp") #spaces of 4 between words
           print(current_time,end="")
           print("  00:00:00",end="")
