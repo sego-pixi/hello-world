@@ -67,15 +67,12 @@ count=0;
 count2=0
 
 def get_press():
-        global count2
+       
         while True:    
             
               
-            if(GPIO.input(15)) and count2==0:
-                    if(GPIO.input(16)):
-                        print("Pushed")
-                        count2=1
-                        clear()
+            if(GPIO.input(15)):
+                    
                     #btn_pressed = True
                     global t
                     if t==10:
@@ -92,14 +89,14 @@ def get_press():
 #             elif(GPIO.input(16)):
 #                 count2=0;
                         
-            if count2==1:            
-                print("2..logging has stopped")
-                time.sleep(4)
-                clear()              
-                print("Logging has stopped you can now exit the program")
-                time.sleep(15)
-                break
-                btn_pressed=False
+#             if count2==1:            
+#                 print("2..logging has stopped")
+#                 time.sleep(4)
+#                 clear()              
+#                 print("Logging has stopped you can now exit the program")
+#                 time.sleep(15)
+#                 break
+#                 btn_pressed=False
 
               
 def start_helper_thread():
@@ -108,26 +105,35 @@ def start_helper_thread():
     except:
         print("thread error")
         
-def printit():     
+def printit():  
+       global count2
        global t
        start_helper_thread()     
        while True:
-        x=chan.voltage-0.5
-        temperature=x/0.1
-        #thread = threading.Timer(5, printit).start()
-        time.sleep(t)
-        now= datetime.now()        
-        current_time = now.strftime("%H:%M:%S")
-        print(current_time,end="")           
-                #time.sleep(5)
-        end=time.time()
-        duration=end-start
-        secs=round(duration)
-        m, s = divmod(secs, 60)
-        h, m = divmod(m, 60)
-
-        print('  {:02d}:{:02d}:{:02d}'.format(h, m, s),end="") 
-        print("{:-8.1f} C".format(temperature))
+        if(GPIO.input(16)) and count2==0:         
+            
+            x=chan.voltage-0.5
+            temperature=x/0.1
+            #thread = threading.Timer(5, printit).start()
+            time.sleep(t)
+            now= datetime.now()        
+            current_time = now.strftime("%H:%M:%S")
+            print(current_time,end="")           
+                    #time.sleep(5)
+            end=time.time()
+            duration=end-start
+            secs=round(duration)
+            m, s = divmod(secs, 60)
+            h, m = divmod(m, 60)
+            print('  {:02d}:{:02d}:{:02d}'.format(h, m, s),end="") 
+            print("{:-8.1f} C".format(temperature))
+            count2=1
+        if count2==1:
+            print("1..logging has stopped")
+            time.sleep(4)
+            clear()              
+            print("Logging has stopped you can now exit the program")
+            time.sleep(15)
         
         
                 
