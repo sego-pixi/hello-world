@@ -87,12 +87,13 @@ def get_press():
        
                         
             else:
-            print("logging has stopped")
-            time.sleep(4)
-            clear()              
-            print("Logging has stopped you can now exit the program")
-            time.sleep(15)
-            break
+            
+                print("logging has stopped")
+                time.sleep(4)
+                clear()              
+                print("Logging has stopped you can now exit the program")
+                time.sleep(15)
+                break
                 btn_pressed=False
 
               
