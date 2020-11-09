@@ -86,7 +86,7 @@ def pressBtn():
 #     global btn_already_pressed;
     global count
     running=True
-    while running:
+    while True:
 #     #start_helper_thread() 
 #     #complete=False
 #     #while complete==False:
@@ -113,8 +113,7 @@ def pressBtn():
             elif count==1:
               print("logging has stopped")
               time.sleep(4)
-              clear()
-              
+              clear()            
               print("Logging has stopped you can now exit the program")
               time.sleep(15)
               
