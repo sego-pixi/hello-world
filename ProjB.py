@@ -99,7 +99,7 @@ def printit():
        global t
        start_helper_thread()     
        while True:
-        #if(GPIO.input(16)) and count2==0:         
+        if(GPIO.input(16)) and count2==0:         
 #             if(GPIO.input(16)):
 #              count2=1
 #             else:
@@ -118,14 +118,15 @@ def printit():
               h, m = divmod(m, 60)
               print('  {:02d}:{:02d}:{:02d}'.format(h, m, s),end="") 
               print("{:-8.1f} C".format(temperature))
+              count2=1
             
             
-#         if count2==1:
-#             print("1..logging has stopped")
-#             time.sleep(4)
-#             clear()              
-#             print("Logging has stopped you can now exit the program")
-#             time.sleep(15)
+        if count2==1:
+            print("1..logging has stopped")
+            time.sleep(4)
+            clear()              
+            print("Logging has stopped you can now exit the program")
+            time.sleep(15)
         
         
                 
@@ -135,7 +136,7 @@ def pressBtn():
 #     global btn_already_pressed;
     global count
     while True:
-        
+        #blynk.run()
         if(GPIO.input(16)):
           if count==0:
             
