@@ -117,6 +117,7 @@ def printit():
               duration=end-start
               secs=round(duration)
               sensor_data=20
+              blynk.virtual_write(1,"Time     Sys Timer     Temp")
               blynk.virtual_write(1,sensor_data)
               m, s = divmod(secs, 60)
               h, m = divmod(m, 60)
