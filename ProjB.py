@@ -16,7 +16,20 @@ import BlynkLib
 
 BLYNK_AUTH='MuR0By29Wg-I38uvkZoSLe3vfP6iyyR7'
 blynk=BlynkLib.Blynk(BLYNK_AUTH)
-  
+
+
+spi = busio.SPI(clock=board.SCK, MISO=board.MISO, MOSI=board.MOSI)
+
+# create the cs (chip select)
+cs = digitalio.DigitalInOut(board.D5)
+
+# create the mcp object
+mcp = MCP.MCP3008(spi, cs)
+
+# create an analog input channel on pin 1
+chan = AnalogIn(mcp, MCP.P0)
+
+t=5#initially
 def clear(): 
   
     # for windows 
@@ -112,22 +125,22 @@ def button_callback(channel):
       print("logging started")
       #sensor_data=20
       
-#       blynk.run()
-#       blynk.virtual_write(1,"clr")
-#       now= datetime.now()
-#       current_time = now.strftime("%H:%M:%S")
-#       x=chan.voltage-0.5
-#       temperature=x/0.1
-#       print("Time      Sys Timer  Temp") #spaces of 4 between words
-#       blynk.virtual_write(1,"Time       Sys Timer      Temp\n")
-#       print(current_time,end="")
-#       blynk.virtual_write(1,current_time)
-#       print("  00:00:00",end="")
-#       blynk.virtual_write(1,"   00:00:00       ")
-#       print("{:-8.1f} C".format(temperature))
-#       newtemp=round(temperature,1)
-#       blynk.virtual_write(1,newtemp,"\n")
-#       start_helper_thread()
+      blynk.run()
+      blynk.virtual_write(1,"clr")
+      now= datetime.now()
+      current_time = now.strftime("%H:%M:%S")
+      x=chan.voltage-0.5
+      temperature=x/0.1
+      print("Time      Sys Timer  Temp") #spaces of 4 between words
+      blynk.virtual_write(1,"Time       Sys Timer      Temp\n")
+      print(current_time,end="")
+      blynk.virtual_write(1,current_time)
+      print("  00:00:00",end="")
+      blynk.virtual_write(1,"   00:00:00       ")
+      print("{:-8.1f} C".format(temperature))
+      newtemp=round(temperature,1)
+      blynk.virtual_write(1,newtemp,"\n")
+      start_helper_thread()
       
       start=False
     else:
@@ -150,21 +163,35 @@ def main():
   GPIO.setup(15,GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
   # create the spi bus
-  spi = busio.SPI(clock=board.SCK, MISO=board.MISO, MOSI=board.MOSI)
-
-  # create the cs (chip select)
-  cs = digitalio.DigitalInOut(board.D5)
-
-  # create the mcp object
-  mcp = MCP.MCP3008(spi, cs)
-
-  # create an analog input channel on pin 1
-  chan = AnalogIn(mcp, MCP.P0)
-  t=5#initially
+  
+  
   start=time.time()
   #print("Press button to start monitoring the sensor")
   GPIO.add_event_detect(16,GPIO.RISING,callback=button_callback)
   message = input("Press button to start monitoring the sensor\n")
+  if start:
+      x=chan.voltage-0.5
+      temperature=x/0.1
+      #thread = threading.Timer(5, printit).start()
+      time.sleep(t)
+      now= datetime.now()        
+      current_time = now.strftime("%H:%M:%S")
+      print(current_time,end="")   
+      blynk.virtual_write(1,current_time)
+                      #time.sleep(5)
+      end=time.time()
+      duration=end-start
+      secs=round(duration)
+              #sensor_data=20             
+              #blynk.virtual_write(1,sensor_data)
+      m, s = divmod(secs, 60)
+      h, m = divmod(m, 60)
+      print('  {:02d}:{:02d}:{:02d}'.format(h, m, s),end="") 
+      blynk.virtual_write(1,'   {:02d}:{:02d}:{:02d}'.format(h, m, s))
+      print("{:-8.1f} C".format(temperature))
+      newtemp=round(temperature,1)
+      blynk.virtual_write(1,"       ")
+      blynk.virtual_write(1,newtemp,"\n")
     
 #     global btn_already_pressed;
 #     global count
