@@ -99,7 +99,7 @@ def printit():
        global t
        start_helper_thread()     
        while True:
-        if(GPIO.input(16)) and count2==0:         
+        #if(GPIO.input(16)) and count2==0:         
 #             if(GPIO.input(16)):
 #              count2=1
 #             else:
@@ -125,12 +125,12 @@ def printit():
               #count2=1
             
             
-        if count2==1:
-            print("1..logging has stopped")
-            time.sleep(4)
-            clear()              
-            print("Logging has stopped you can now exit the program")
-            time.sleep(15)
+#         if count2==1:
+#             print("1..logging has stopped")
+#             time.sleep(4)
+#             clear()              
+#             print("Logging has stopped you can now exit the program")
+#             time.sleep(15)
         
         
                 
