@@ -118,7 +118,7 @@ def printit():
               duration=end-start
               secs=round(duration)
               #sensor_data=20             
-              blynk.virtual_write(1,sensor_data)
+              #blynk.virtual_write(1,sensor_data)
               m, s = divmod(secs, 60)
               h, m = divmod(m, 60)
               print('  {:02d}:{:02d}:{:02d}'.format(h, m, s),end="") 
