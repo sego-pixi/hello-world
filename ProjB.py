@@ -122,9 +122,10 @@ def printit():
               m, s = divmod(secs, 60)
               h, m = divmod(m, 60)
               print('  {:02d}:{:02d}:{:02d}'.format(h, m, s),end="") 
-              blynk.virtual_write(1,'  {:02d}:{:02d}:{:02d}'.format(h, m, s))
+              blynk.virtual_write(1,'   {:02d}:{:02d}:{:02d}'.format(h, m, s))
               print("{:-8.1f} C".format(temperature))
               newtemp=round(temperature,1)
+              blynk.virtual_write(1,"           ")
               blynk.virtual_write(1,newtemp,"\n")
               
               
