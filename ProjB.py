@@ -198,7 +198,7 @@ def main():
   
     
 #     global btn_already_pressed;
-#     global count
+  global count
   while True:
     
     blynk.run()
