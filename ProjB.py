@@ -159,7 +159,7 @@ def pressBtn():
             x=chan.voltage-0.5
             temperature=x/0.1
             print("Time      Sys Timer  Temp") #spaces of 4 between words
-            blynk.virtual_write(1,"Time     Sys Timer     Temp")
+            blynk.virtual_write(1,"Time     Sys Timer     Temp\n")
             print(current_time,end="")
             blynk.virtual_write(1,current_time)
             print("  00:00:00",end="")
