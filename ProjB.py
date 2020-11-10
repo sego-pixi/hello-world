@@ -129,8 +129,9 @@ def main():
   chan = AnalogIn(mcp, MCP.P0)
   t=5#initially
   start=time.time()
-  print("Press button to start monitoring the sensor")
+  #print("Press button to start monitoring the sensor")
   GPIO.add_event_detect(16,GPIO.RISING,callback=button_callback)
+  message = input("Press button to start monitoring the sensor\n")
     
 #     global btn_already_pressed;
 #     global count
