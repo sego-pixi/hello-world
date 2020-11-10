@@ -86,17 +86,6 @@ def get_press():
                         t=10
                         time.sleep(3)
                     print(t)
-#             elif(GPIO.input(16)):
-#                 count2=0;
-                        
-#             if count2==1:            
-#                 print("2..logging has stopped")
-#                 time.sleep(4)
-#                 clear()              
-#                 print("Logging has stopped you can now exit the program")
-#                 time.sleep(15)
-#                 break
-#                 btn_pressed=False
 
               
 def start_helper_thread():
@@ -174,21 +163,6 @@ def pressBtn():
             clear()              
             print("Logging has stopped you can now exit the program")
             time.sleep(15)
-#           count=1;
-#           print("logging started")
-#           now= datetime.now()
-#           current_time = now.strftime("%H:%M:%S")
-#           x=chan.voltage-0.5
-#           temperature=x/0.1
-#           print("Time      Sys Timer  Temp") #spaces of 4 between words
-#           print(current_time,end="")
-#           print("  00:00:00",end="")
-#           print("{:-8.1f} C".format(temperature))
-#           printit()
-#         elif(GPIO.input(16)) and count==1:
-#           print("logging has stopped")
-#           time.sleep(2)
-#           clear()
-#           sys.exit()
+
             
 pressBtn()
