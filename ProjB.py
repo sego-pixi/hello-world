@@ -143,6 +143,29 @@ def button_callback(channel):
       start_helper_thread()
       
       start=False
+      while not start:
+        x=chan.voltage-0.5
+        temperature=x/0.1
+        #thread = threading.Timer(5, printit).start()
+        time.sleep(t)
+        now= datetime.now()        
+        current_time = now.strftime("%H:%M:%S")
+        print(current_time,end="")   
+        blynk.virtual_write(1,current_time)
+                        #time.sleep(5)
+        end=time.time()
+        duration=end-start
+        secs=round(duration)
+                #sensor_data=20             
+                #blynk.virtual_write(1,sensor_data)
+        m, s = divmod(secs, 60)
+        h, m = divmod(m, 60)
+        print('  {:02d}:{:02d}:{:02d}'.format(h, m, s),end="") 
+        blynk.virtual_write(1,'   {:02d}:{:02d}:{:02d}'.format(h, m, s))
+        print("{:-8.1f} C".format(temperature))
+        newtemp=round(temperature,1)
+        blynk.virtual_write(1,"       ")
+        blynk.virtual_write(1,newtemp,"\n")
     else:
       
       print("1..logging has stopped")
@@ -168,29 +191,6 @@ def main():
   start=time.time()
   #print("Press button to start monitoring the sensor")
   GPIO.add_event_detect(16,GPIO.RISING,callback=button_callback)
-  while not start:
-      x=chan.voltage-0.5
-      temperature=x/0.1
-      #thread = threading.Timer(5, printit).start()
-      time.sleep(t)
-      now= datetime.now()        
-      current_time = now.strftime("%H:%M:%S")
-      print(current_time,end="")   
-      blynk.virtual_write(1,current_time)
-                      #time.sleep(5)
-      end=time.time()
-      duration=end-start
-      secs=round(duration)
-              #sensor_data=20             
-              #blynk.virtual_write(1,sensor_data)
-      m, s = divmod(secs, 60)
-      h, m = divmod(m, 60)
-      print('  {:02d}:{:02d}:{:02d}'.format(h, m, s),end="") 
-      blynk.virtual_write(1,'   {:02d}:{:02d}:{:02d}'.format(h, m, s))
-      print("{:-8.1f} C".format(temperature))
-      newtemp=round(temperature,1)
-      blynk.virtual_write(1,"       ")
-      blynk.virtual_write(1,newtemp,"\n")
   message = input("Press button to start monitoring the sensor\n")
   
     
