@@ -99,7 +99,7 @@ def printit():
        global t
        start_helper_thread()     
        while True:
-        if(GPIO.input(16)) and count2==0:
+        #if(GPIO.input(16)) and count2==0:
                  
 #             if(GPIO.input(16)):
 #              count2=1
