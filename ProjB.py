@@ -120,7 +120,7 @@ def printit():
 def button_callback(channel):
   
     global start
-    if not start:      
+    if start:      
       print("Button was pushed!")
       print("logging started")
       #sensor_data=20
@@ -169,7 +169,7 @@ def main():
   #print("Press button to start monitoring the sensor")
   GPIO.add_event_detect(16,GPIO.RISING,callback=button_callback)
   message = input("Press button to start monitoring the sensor\n")
-  if start:
+  if not start:
       x=chan.voltage-0.5
       temperature=x/0.1
       #thread = threading.Timer(5, printit).start()
