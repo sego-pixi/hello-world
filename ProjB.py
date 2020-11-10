@@ -161,8 +161,11 @@ def pressBtn():
             print("Time      Sys Timer  Temp") #spaces of 4 between words
             blynk.virtual_write(1,"Time     Sys Timer     Temp")
             print(current_time,end="")
+            blynk.virtual_write(1,current_time)
             print("  00:00:00",end="")
+            blynk.virtual_write(1,"  00:00:00")
             print("{:-8.1f} C".format(temperature))
+            blynk.virtual_write(1,temperature)
             printit()
             count=1
             print("now 1")
