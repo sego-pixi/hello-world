@@ -12,10 +12,10 @@ from os import system, name
 import sys
 import subprocess, os
 import signal
-#import BlynkLib
+import BlynkLib
 
-#BLYNK_AUTH='7t6Q72qVqWmrxPWydL0F18TEWejod_7P'
-#blynk=BlynkLib.Blynk(BLYNK_AUTH)
+BLYNK_AUTH='7t6Q72qVqWmrxPWydL0F18TEWejod_7P'
+blynk=BlynkLib.Blynk(BLYNK_AUTH)
 
 #this is for the start/stop button (Changed pin to 16)
 GPIO.setmode(GPIO.BCM)
@@ -115,6 +115,7 @@ def printit():
               end=time.time()
               duration=end-start
               secs=round(duration)
+              blynk.virtual_write(1,sensor_data)
               m, s = divmod(secs, 60)
               h, m = divmod(m, 60)
               print('  {:02d}:{:02d}:{:02d}'.format(h, m, s),end="") 
@@ -149,7 +150,7 @@ def pressBtn():
             #sensor_data=20
             #blynk.virtual_write(1,sensor_data)
             #write_to_pin(4)
-           # blynk.run
+            blynk.run()
             now= datetime.now()
             current_time = now.strftime("%H:%M:%S")
             x=chan.voltage-0.5
