@@ -14,7 +14,8 @@ import subprocess, os
 import signal
 import BlynkLib
 
-
+BLYNK_AUTH='MuR0By29Wg-I38uvkZoSLe3vfP6iyyR7'
+blynk=BlynkLib.Blynk(BLYNK_AUTH)
   
 def clear(): 
   
@@ -127,8 +128,7 @@ def button_callback(channel):
                 
 def main():
   #BLYNK_AUTH='7t6Q72qVqWmrxPWydL0F18TEWejod_7P'
-  BLYNK_AUTH='MuR0By29Wg-I38uvkZoSLe3vfP6iyyR7'
-  blynk=BlynkLib.Blynk(BLYNK_AUTH)
+ 
 
   #this is for the start/stop button (Changed pin to 16)
   GPIO.setmode(GPIO.BCM)
