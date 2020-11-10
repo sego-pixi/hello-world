@@ -86,7 +86,8 @@ def get_press():
                     elif t==5:
                         t=10
                         time.sleep(3)
-                    print(t)
+                    print("new interval:",t)
+                    blynk.virtual_write(1,"new interval:",t,"\n")
 
               
 def start_helper_thread():
@@ -125,7 +126,7 @@ def printit():
               blynk.virtual_write(1,'   {:02d}:{:02d}:{:02d}'.format(h, m, s))
               print("{:-8.1f} C".format(temperature))
               newtemp=round(temperature,1)
-              blynk.virtual_write(1,"           ")
+              blynk.virtual_write(1,"       ")
               blynk.virtual_write(1,newtemp,"\n")
               
               
