@@ -14,30 +14,7 @@ import subprocess, os
 import signal
 import BlynkLib
 
-#BLYNK_AUTH='7t6Q72qVqWmrxPWydL0F18TEWejod_7P'
-BLYNK_AUTH='MuR0By29Wg-I38uvkZoSLe3vfP6iyyR7'
-blynk=BlynkLib.Blynk(BLYNK_AUTH)
 
-#this is for the start/stop button (Changed pin to 16)
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(16,GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-#this is for the interval button
-GPIO.setup(15,GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-
-# create the spi bus
-spi = busio.SPI(clock=board.SCK, MISO=board.MISO, MOSI=board.MOSI)
-
-# create the cs (chip select)
-cs = digitalio.DigitalInOut(board.D5)
-
-# create the mcp object
-mcp = MCP.MCP3008(spi, cs)
-
-# create an analog input channel on pin 1
-chan = AnalogIn(mcp, MCP.P0)
-t=5#initially
-start=time.time()
-print("Press button to start monitoring the sensor")
   
 def clear(): 
   
@@ -129,7 +106,30 @@ def button_callback(channel):
     print("Button was pushed!")          
                 
 def main():
-  
+  #BLYNK_AUTH='7t6Q72qVqWmrxPWydL0F18TEWejod_7P'
+  BLYNK_AUTH='MuR0By29Wg-I38uvkZoSLe3vfP6iyyR7'
+  blynk=BlynkLib.Blynk(BLYNK_AUTH)
+
+  #this is for the start/stop button (Changed pin to 16)
+  GPIO.setmode(GPIO.BCM)
+  GPIO.setup(16,GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+  #this is for the interval button
+  GPIO.setup(15,GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+
+  # create the spi bus
+  spi = busio.SPI(clock=board.SCK, MISO=board.MISO, MOSI=board.MOSI)
+
+  # create the cs (chip select)
+  cs = digitalio.DigitalInOut(board.D5)
+
+  # create the mcp object
+  mcp = MCP.MCP3008(spi, cs)
+
+  # create an analog input channel on pin 1
+  chan = AnalogIn(mcp, MCP.P0)
+  t=5#initially
+  start=time.time()
+  print("Press button to start monitoring the sensor")
   GPIO.add_event_detect(16,GPIO.RISING,callback=button_callback)
     
 #     global btn_already_pressed;
