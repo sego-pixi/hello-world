@@ -168,7 +168,7 @@ def pressBtn():
             print(current_time,end="")
             blynk.virtual_write(1,current_time)
             print("  00:00:00",end="")
-            blynk.virtual_write(1,"   00:00:00        ")
+            blynk.virtual_write(1,"   00:00:00       ")
             print("{:-8.1f} C".format(temperature))
             newtemp=round(temperature,1)
             blynk.virtual_write(1,newtemp,"\n")
