@@ -118,7 +118,10 @@ def printit():
               h, m = divmod(m, 60)
               print('  {:02d}:{:02d}:{:02d}'.format(h, m, s),end="") 
               print("{:-8.1f} C".format(temperature))
-              count2=1
+              
+              if(GPIO.input(16)):
+               count2=1
+              #count2=1
             
             
         if count2==1:
