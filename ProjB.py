@@ -144,7 +144,7 @@ def button_callback(channel):
       
       start=False
       while not start:
-        message = input("",end="")
+        message = input(" ",end="")
         x=chan.voltage-0.5
         temperature=x/0.1
         #thread = threading.Timer(5, printit).start()
