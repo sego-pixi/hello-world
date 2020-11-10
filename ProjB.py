@@ -119,8 +119,8 @@ def printit():
               print('  {:02d}:{:02d}:{:02d}'.format(h, m, s),end="") 
               print("{:-8.1f} C".format(temperature))
               
-              if(GPIO.input(16)):
-               count2=1
+#               if(GPIO.input(16)):
+#                count2=1
                print("here")
               #count2=1
             
