@@ -134,38 +134,40 @@ def main():
     while True:
         #blynk.run()
         if(GPIO.input(16)):
-          if count==0:
-            
-            print("logging started")
-            #sensor_data=20
-            #blynk.virtual_write(1,sensor_data)
-            #write_to_pin(4)
-            blynk.run()
-            blynk.virtual_write(1,"clr")
-            now= datetime.now()
-            current_time = now.strftime("%H:%M:%S")
-            x=chan.voltage-0.5
-            temperature=x/0.1
-            print("Time      Sys Timer  Temp") #spaces of 4 between words
-            blynk.virtual_write(1,"Time       Sys Timer      Temp\n")
-            print(current_time,end="")
-            blynk.virtual_write(1,current_time)
-            print("  00:00:00",end="")
-            blynk.virtual_write(1,"   00:00:00       ")
-            print("{:-8.1f} C".format(temperature))
-            newtemp=round(temperature,1)
-            blynk.virtual_write(1,newtemp,"\n")
-            printit()
-            count=1
-            print("now 1")
+          print("here")
+          #if count==0:
             
             
-          if count==1:
-            print("1..logging has stopped")
-            time.sleep(4)
-            clear()              
-            print("Logging has stopped you can now exit the program")
-            time.sleep(15)
+#             print("logging started")
+#             #sensor_data=20
+#             #blynk.virtual_write(1,sensor_data)
+#             #write_to_pin(4)
+#             blynk.run()
+#             blynk.virtual_write(1,"clr")
+#             now= datetime.now()
+#             current_time = now.strftime("%H:%M:%S")
+#             x=chan.voltage-0.5
+#             temperature=x/0.1
+#             print("Time      Sys Timer  Temp") #spaces of 4 between words
+#             blynk.virtual_write(1,"Time       Sys Timer      Temp\n")
+#             print(current_time,end="")
+#             blynk.virtual_write(1,current_time)
+#             print("  00:00:00",end="")
+#             blynk.virtual_write(1,"   00:00:00       ")
+#             print("{:-8.1f} C".format(temperature))
+#             newtemp=round(temperature,1)
+#             blynk.virtual_write(1,newtemp,"\n")
+#             printit()
+#             count=1
+#             print("now 1")
+            
+            
+#           elif count==1:
+#             print("1..logging has stopped")
+#             time.sleep(4)
+#             clear()              
+#             print("Logging has stopped you can now exit the program")
+#             time.sleep(15)
 
             
 main()
