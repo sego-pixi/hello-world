@@ -169,7 +169,7 @@ def main():
   #print("Press button to start monitoring the sensor")
   GPIO.add_event_detect(16,GPIO.RISING,callback=button_callback)
   message = input("Press button to start monitoring the sensor\n")
-  if not start:
+  while not start:
       x=chan.voltage-0.5
       temperature=x/0.1
       #thread = threading.Timer(5, printit).start()
