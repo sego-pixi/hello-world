@@ -168,7 +168,6 @@ def main():
   start=time.time()
   #print("Press button to start monitoring the sensor")
   GPIO.add_event_detect(16,GPIO.RISING,callback=button_callback)
-  message = input("Press button to start monitoring the sensor\n")
   while not start:
       x=chan.voltage-0.5
       temperature=x/0.1
@@ -192,6 +191,8 @@ def main():
       newtemp=round(temperature,1)
       blynk.virtual_write(1,"       ")
       blynk.virtual_write(1,newtemp,"\n")
+  message = input("Press button to start monitoring the sensor\n")
+  
     
 #     global btn_already_pressed;
 #     global count
