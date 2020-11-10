@@ -125,17 +125,20 @@ def printit():
 #             time.sleep(15)
         
         
-                
+def button_callback(channel):
+    print("Button was pushed!")          
                 
 def main():
+  
+  GPIO.add_event_detect(16,GPIO.RISING,callback=button_callback)
     
 #     global btn_already_pressed;
-    global count
-    while True:
-        #blynk.run()
-        if(GPIO.input(16)):
-          print("here")
-          #if count==0:
+#     global count
+#     while True:
+#         #blynk.run()
+#         if(GPIO.input(16)):
+#             print("here")
+#           #if count==0:
             
             
 #             print("logging started")
@@ -157,12 +160,46 @@ def main():
 #             print("{:-8.1f} C".format(temperature))
 #             newtemp=round(temperature,1)
 #             blynk.virtual_write(1,newtemp,"\n")
-#             printit()
+# #            printit()
+#             if count ==1:
+#                 print("1..logging has stopped")
+#                 time.sleep(4)
+#                 clear()              
+#                 print("Logging has stopped you can now exit the program")
+#                 time.sleep(15)
+#                 break
+#               start_helper_thread()
+              
 #             count=1
-#             print("now 1")
+               
+# #             print("now 1")
             
             
 #           elif count==1:
+              
+#               x=chan.voltage-0.5
+#               temperature=x/0.1
+#               #thread = threading.Timer(5, printit).start()
+#               time.sleep(t)
+#               now= datetime.now()        
+#               current_time = now.strftime("%H:%M:%S")
+#               print(current_time,end="")   
+#               blynk.virtual_write(1,current_time)
+#                       #time.sleep(5)
+#               end=time.time()
+#               duration=end-start
+#               secs=round(duration)
+#               #sensor_data=20             
+#               #blynk.virtual_write(1,sensor_data)
+#               m, s = divmod(secs, 60)
+#               h, m = divmod(m, 60)
+#               print('  {:02d}:{:02d}:{:02d}'.format(h, m, s),end="") 
+#               blynk.virtual_write(1,'   {:02d}:{:02d}:{:02d}'.format(h, m, s))
+#               print("{:-8.1f} C".format(temperature))
+#               newtemp=round(temperature,1)
+#               blynk.virtual_write(1,"       ")
+#               blynk.virtual_write(1,newtemp,"\n")
+    
 #             print("1..logging has stopped")
 #             time.sleep(4)
 #             clear()              
