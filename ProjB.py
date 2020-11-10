@@ -121,6 +121,7 @@ def printit():
               
               if(GPIO.input(16)):
                count2=1
+               print("here")
               #count2=1
             
             
