@@ -116,8 +116,7 @@ def printit():
               end=time.time()
               duration=end-start
               secs=round(duration)
-              sensor_data=20
-              blynk.virtual_write(1,"Time     Sys Timer     Temp")
+              sensor_data=20             
               blynk.virtual_write(1,sensor_data)
               m, s = divmod(secs, 60)
               h, m = divmod(m, 60)
@@ -159,6 +158,7 @@ def pressBtn():
             x=chan.voltage-0.5
             temperature=x/0.1
             print("Time      Sys Timer  Temp") #spaces of 4 between words
+            blynk.virtual_write(1,"Time     Sys Timer     Temp")
             print(current_time,end="")
             print("  00:00:00",end="")
             print("{:-8.1f} C".format(temperature))
