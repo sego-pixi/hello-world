@@ -120,7 +120,7 @@ def printit():
 def button_callback(channel):
   
     global start
-    if start:      
+    if not start:      
       print("Button was pushed!")
       print("logging started")
       #sensor_data=20
