@@ -38,20 +38,6 @@ chan = AnalogIn(mcp, MCP.P0)
 t=5#initially
 start=time.time()
 print("Press button to start monitoring the sensor")
-
-# @blynk.VIRTUAL_WRITE(1)
-# def write_to_pin(value):
-#   print('Current V1 value: {}'.format(value))
-#   #sensor_data=20
-#   #blynk.virtual_write(1,sensor_data)
-#   #blynk.virtual_write(pin,25)
-# @blynk.VIRTUAL_READ(2)
-# def my_user_task():
-#     # this widget will show some time in seconds..
-#     blynk.virtual_write(2, 45)
-#     blynk.virtual_write(3, 50)
- 
-  
   
 def clear(): 
   
@@ -63,17 +49,12 @@ def clear():
     else: 
         _ = system('clear') 
         
-#btn_already_pressed=False
 count=0;
 count2=0
 
-def get_press():
-       
-        while True:    
-            
-              
-            if(GPIO.input(15)):
-                    
+def get_press():      
+        while True:                              
+            if(GPIO.input(15)):                    
                     #btn_pressed = True
                     global t
                     if t==10:
@@ -146,7 +127,7 @@ def printit():
         
                 
                 
-def pressBtn():
+def main():
     
 #     global btn_already_pressed;
     global count
@@ -187,4 +168,4 @@ def pressBtn():
             time.sleep(15)
 
             
-pressBtn()
+main()
