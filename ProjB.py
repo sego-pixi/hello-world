@@ -51,7 +51,7 @@ def clear():
         
 count=0;
 count2=0
-start=True
+
 
 def get_press():      
         while True:                              
