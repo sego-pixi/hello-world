@@ -111,17 +111,22 @@ def printit():
               time.sleep(t)
               now= datetime.now()        
               current_time = now.strftime("%H:%M:%S")
-              print(current_time,end="")           
+              print(current_time,end="")   
+              blynk.virtual_write(1,current_time)
                       #time.sleep(5)
               end=time.time()
               duration=end-start
               secs=round(duration)
-              sensor_data=20             
+              #sensor_data=20             
               blynk.virtual_write(1,sensor_data)
               m, s = divmod(secs, 60)
               h, m = divmod(m, 60)
               print('  {:02d}:{:02d}:{:02d}'.format(h, m, s),end="") 
+              blynk.virtual_write(1,'  {:02d}:{:02d}:{:02d}'.format(h, m, s))
               print("{:-8.1f} C".format(temperature))
+              newtemp=round(temperature,1)
+              blynk.virtual_write(1,newtemp,"\n")
+              
               
 #               if(GPIO.input(16)):
 #                count2=1
@@ -163,10 +168,10 @@ def pressBtn():
             print(current_time,end="")
             blynk.virtual_write(1,current_time)
             print("  00:00:00",end="")
-            blynk.virtual_write(1,"   00:00:00    ")
+            blynk.virtual_write(1,"   00:00:00        ")
             print("{:-8.1f} C".format(temperature))
             newtemp=round(temperature,1)
-            blynk.virtual_write(1,newtemp)
+            blynk.virtual_write(1,newtemp,"\n")
             printit()
             count=1
             print("now 1")
